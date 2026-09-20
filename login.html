@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LingoWeb - Iniciar sesión</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <div class="marca">
+            <!--Usamos un div porque necesitamos simplemente agrupar, pero no se representa un contenido semantico distinto-->
+            <div class="imagotipo">LW</div>
+
+            <div>
+                <h1>LingoWeb</h1>
+                <p>Aprende Inglés, Alemán y Chino gratis y de forma divertida</p>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main class="contenedor">
+
+        <section class="tarjeta">
+
+            <h2>Iniciar sesión</h2>
+
+            <p class="texto-bienvenida">
+                Continúa tu aprendizaje de idiomas
+            </p>
+
+
+            <form>
+
+                <div class="campo">
+
+                    <label for="email"><!--El label for representa el texto que se muestra junto al campo de entrada. El for del label siempre debe coincidir con el id del input-->
+                        Usuario / Email:
+                    </label>
+
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu email" required><!--input type representa el tipo de campo de entrada y placeholder representa el texto de ayuda-->
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="password">
+                        Contraseña:
+                    </label>
+
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required><!--Required nos indica que no debe enviarse vacío-->
+
+                </div>
+
+
+                <a class="enlace-olvido" href="recuperar.html">
+                    ¿Olvidaste tu contraseña?
+                </a>
+
+
+                <a class="boton boton-principal" href="dashboard.html">
+                    Iniciar Sesión
+                </a>
+
+            </form>
+
+
+            <div class="registro">
+
+                <p>
+                    ¿No tienes cuenta?
+                    <a href="registro.html">
+                        Créala aquí
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
