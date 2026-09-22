@@ -10,7 +10,7 @@ Trabajo práctico de HTML y CSS: plataforma de aprendizaje de idiomas.
 ## Integrantes
 
 - Acevedo, Araceli
-- Lavín, Felipe
+- Lavin, Felipe
 - Herrera, Christian
 - Mereles, Abel
 
