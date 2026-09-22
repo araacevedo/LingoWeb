@@ -1,0 +1,14 @@
+@media (max-width: 40rem) {
+    .marca {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .encabezado {
+        padding: 1.5rem 1rem;
+    }
+
+    .tarjeta {
+    padding: 1.25rem;
+    }
+}

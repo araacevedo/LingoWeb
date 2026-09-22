@@ -1,0 +1,25 @@
+/* Logo y texto del encabezado */
+
+.marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Letras centradas dentro del logo */
+
+.imagotipo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* es xq no quiero que flexbox de marca que lo contiene, lo haga mas angosto */
+}
+
+/* Etiqueta arriba del campo de entrada */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
