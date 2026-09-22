@@ -133,3 +133,32 @@ a {
     text-align: center;
 }
 
+.barra-navegacion {
+    position: sticky; /* permito que se pegue al hacer scroll */
+    top: 0;           /* se pega al borde superior */
+    z-index: 10;    /* queda por encima del contenido */
+    padding: 1rem 1.5rem;
+    background-color: white;
+    border-bottom: 0.0625rem solid #dce1eb;      
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.barra-navegacion nav a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    color: #243047;
+    text-decoration: none;
+}
+
+.barra-navegacion nav a:hover,
+.barra-navegacion nav a.activo {
+    background-color: #eeecff;
+    color: #3730a3;
+}
+
