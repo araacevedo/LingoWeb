@@ -1,0 +1,136 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoWeb - Ranking</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="dashboard.html">LingoWeb</a>
+
+            <ul>
+                <li>
+                    <a href="dashboard.html">Cursos</a>
+                </li>
+                <li>
+                    <a href="perfil.html">Perfil</a>
+                </li>
+                <li>
+                    <a href="ranking.html" aria-current="page">Ranking</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="ranking">
+
+            <header class="ranking-header">
+
+                <h1>🏆 Tabla de Clasificación</h1>
+
+                <div class="liga-selector">
+
+                    <label for="liga">Liga actual:</label><!--Utilizar un label nos permite indicar que este selector sirve para elegir la liga (el cual debe estar asociado al id)-->
+
+                    <select id="liga" name="liga"><!--La consigna pide un selector de liga actual para esta vista. Debajo definimos las opciones con sus valores posibles-->
+                        <option value="bronce" selected>Liga de Bronce</option>
+                        <option value="plata">Liga de Plata</option>
+                        <option value="oro">Liga de Oro</option>
+                    </select>
+
+                </div>
+
+                <h1>🏆 Tabla de Clasificación - Liga de Bronce</h1>
+              
+                <p>
+                    Los 5 primeros ascienden a la Liga de Plata esta semana.
+                </p>
+
+            </header>
+
+            <div class="ranking-table-container">
+
+                <table><!--Usamos table para datos tabulares-->
+
+                    <thead><!--Agrupa el contenido de encabezado (títulos de las columnas)-->
+                        <tr><!-- Define una fila horizontal que contendrá celdas-->
+                            <th>Puesto</th><!--<th> Define una celda de encabezado. El texto suele ser negrita y centrado por defecto; indica el "nombre" de la fila o columna--> 
+                            <th>Estudiante</th>
+                            <th>XP Semanal</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody><!-- Contiene el cuerpo principal de los datos. Puede haber varios en una sola tabla para separar secciones de datos-->
+
+                        <tr>
+                            <td>🥇 1</td>
+                            <td>MariaG_22</td>
+                            <td>850 XP</td>
+                            <td>Zona de Ascenso</td><!--<td> Es la celda estándar que contiene los datos o valores específicos-->
+                        </tr>
+
+                        <tr class="usuario-actual">
+                            <td>🥈 2</td>
+                            <td>JuanPerez <span>(Tú)</span></td>
+                            <td>720 XP</td>
+                            <td>Zona de Ascenso</td>
+                        </tr>
+
+                        <tr>
+                            <td>🥉 3</td>
+                            <td>Carlos_Dev</td>
+                            <td>610 XP</td>
+                            <td>Zona de Ascenso</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>SofiaL</td>
+                            <td>540 XP</td>
+                            <td>Zona de Ascenso</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>MartinWeb</td>
+                            <td>495 XP</td>
+                            <td>Zona de Ascenso</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>LauraDev</td>
+                            <td>430 XP</td>
+                            <td>Fuera de ascenso</td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td>DiegoCode</td>
+                            <td>385 XP</td>
+                            <td>Fuera de ascenso</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
