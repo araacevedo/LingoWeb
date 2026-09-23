@@ -1,84 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lección de Inglés | LingoWeb</title>
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
-</head>
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="encabezado-leccion">
+      <a href="cursoIngles.html" aria-label="Salir de la lección"> ✕ </a>
 
-        <a href="cursoIngles.html" aria-label="Salir de la lección">
-            ✕
-        </a>
+      <div class="progreso-leccion">
+        <span>Lección 2</span>
+        <strong>2 / 5</strong>
 
-        <div class="progreso-leccion">
-            <span>Lección 2</span>
-            <strong>2 / 5</strong>
-        </div>
+        <progress value="2" max="5" aria-label="Avance de la lección">
+          2 de 5
+        </progress>
+      </div>
 
-        <div class="vidas" aria-label="Vidas restantes">
-            ❤️❤️❤️
-        </div>
-
+      <div class="vidas" aria-label="Vidas restantes">❤️❤️❤️</div>
     </header>
 
     <main class="contenedor-leccion">
+      <section class="ejercicio">
+        <div class="contenido-ejercicio">
+          <p class="etiqueta-seccion">INGLÉS</p>
 
-        <section class="ejercicio">
+          <h1>Traduce la siguiente oración:</h1>
 
-            <div class="contenido-ejercicio">
+          <p class="frase">"Good morning, how are you?"</p>
 
-                <p class="etiqueta-seccion">
-                    INGLÉS
-                </p>
+          <div class="respuesta">[ Buenos ] [ días ] [ ¿cómo ] [ estás? ]</div>
 
-                <h1>
-                    Traduce la siguiente oración:
-                </h1>
+          <hr />
 
-                <p class="frase">
-                    "Good morning, how are you?"
-                </p>
+          <div class="banco-palabras">
+            <p>Banco de palabras disponibles:</p>
 
-                <div class="respuesta">
-                    [ Buenos ] [ días ] [ ¿cómo ] [ estás? ]
-                </div>
-
-                <hr>
-
-                <div class="banco-palabras">
-
-                    <p>
-                        Banco de palabras disponibles:
-                    </p>
-
-                    <div>
-                        [ Hola ] [ días ] [ estás? ] [ Gracias ] [ ¿cómo ] [ Buenos ] [ Adiós ]
-                    </div>
-
-                </div>
-
+            <div>
+              [ Hola ] [ días ] [ estás? ] [ Gracias ] [ ¿cómo ] [ Buenos ] [
+              Adiós ]
             </div>
+          </div>
+        </div>
 
-            <footer class="acciones-ejercicio">
-
-                <button type="button">
-                    Comprobar Respuesta
-                </button>
-
-            </footer>
-
-        </section>
-
+        <footer class="acciones-ejercicio">
+          <button type="button" class="boton boton-principal">
+            Comprobar Respuesta
+          </button>
+        </footer>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>
