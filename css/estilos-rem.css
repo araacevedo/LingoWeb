@@ -599,3 +599,58 @@ a {
     padding: 1rem;
     font-size: 1rem;
 }
+
+.encabezado-leccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-bottom: 0.0625rem solid #dce1eb;
+}
+
+.progreso-leccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 25rem;
+    margin: 0 2rem;
+}
+
+.progreso-leccion span {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #596579;
+    margin-bottom: 0.25srem;
+}
+
+/* Estilo para la barra de progreso superior en lecciones */
+.progreso-leccion .barra-progreso {
+    display: block;
+    width: 100%;
+    height: 0.75rem;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    appearance: none;
+    background-color: #e3e7f0;
+}
+
+.progreso-leccion .barra-progreso::-webkit-progress-value {
+    background-color: #4f46e5;
+    border-radius: 1rem;
+}
+
+.acciones-ejercicio {
+    margin-top: 2rem;
+    border-top: 0.0625rem solid #dce1eb;
+    padding-top: 1.5rem;
+}
+
+.acciones-ejercicio .boton {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
