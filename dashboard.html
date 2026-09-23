@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>LingoWeb - Mis cursos</title>
 
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
   </head>
 
   <body>
@@ -30,7 +30,6 @@
         <a href="tienda.html"> Tienda / Rachas </a>
 
         <a href="login.html" class="enlace-salir"> Salir </a>
-        
       </nav>
     </header>
 
@@ -62,6 +61,15 @@
                 <strong>45%</strong>
               </div>
 
+              <progress
+                class="barra-progreso"
+                value="45"
+                max="100"
+                aria-label="Progreso del curso de inglés"
+              >
+                45%
+              </progress>
+
               <p class="nivel">Nivel: Intermedio (B1)</p>
             </div>
 
@@ -85,6 +93,15 @@
 
                 <strong> 12% </strong>
               </div>
+
+              <progress
+                class="barra-progreso"
+                value="12"
+                max="100"
+                aria-label="Progreso del curso de alemán"
+              >
+                12%
+              </progress>
 
               <p class="nivel">Nivel: Principiante (A1)</p>
             </div>
@@ -110,9 +127,14 @@
                 <strong> 0% </strong>
               </div>
 
-              <div class="barra-progreso">
-                <div class="progreso" style="width: 0%"></div>
-              </div>
+              <progress
+                class="barra-progreso"
+                value="0"
+                max="100"
+                aria-label="Progreso del curso de chino mandarín"
+              >
+                0%
+              </progress>
 
               <p class="nivel">Nivel: Inicial (HSK 1)</p>
             </div>
