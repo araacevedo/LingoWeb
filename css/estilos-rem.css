@@ -1,656 +1,593 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6fb;
-    color: #243047;
-    line-height: 1.5;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6fb;
+  color: #243047;
+  line-height: 1.5;
 }
 
 input,
 button,
 select,
 textarea {
-    font: inherit;
+  font: inherit;
 }
 
 a {
-    color: #4f46e5;
+  color: #4f46e5;
 }
-
 
 /* Encabezado del login */
 
 .encabezado {
-    padding: 2rem 1.25rem;
+  padding: 2rem 1.25rem;
 }
 
 .imagotipo {
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 1rem;
-    background-color: #4f46e5;
-    color: white;
-    font-size: 1.25rem;
-    font-weight: bold;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background-color: #4f46e5;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .marca h1 {
-    margin: 0;
-    font-size: 2rem;
+  margin: 0;
+  font-size: 2rem;
 }
 
 .marca p {
-    margin: 0.25rem 0 0;
+  margin: 0.25rem 0 0;
 }
 
 /* Tarjeta del login */
 
 .contenedor {
-    width: 100%;
-    max-width: 30rem;
-    margin: 1.5rem auto;
-    padding: 0 1rem;
+  width: 100%;
+  max-width: 30rem;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
 }
 
 .tarjeta {
-    padding: 2rem;
-    background-color: white;
-    border: 0.0625rem solid #dce1eb;
-    border-radius: 1.25rem;
+  padding: 2rem;
+  background-color: white;
+  border: 0.0625rem solid #dce1eb;
+  border-radius: 1.25rem;
 }
 
 .tarjeta h2 {
-    margin: 0 0 0.5rem;
+  margin: 0 0 0.5rem;
 }
 
 .texto-bienvenida {
-    margin: 0 0 1.5rem;
-    color: #596579;
+  margin: 0 0 1.5rem;
+  color: #596579;
 }
 
 /* Formulario */
 
 .campo {
-    margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .campo label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .campo input,
 .campo select {
-    width: 100%;
-    min-width: 0;
-    padding: 0.75rem;
-    border: 0.0625rem solid #aab3c2;
-    border-radius: 0.5rem;
-    background-color: white;
-    color: #243047;
+  width: 100%;
+  min-width: 0;
+  padding: 0.75rem;
+  border: 0.0625rem solid #aab3c2;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: #243047;
 }
 
 .enlace-olvido {
-    display: inline-block;
-    margin-bottom: 1.25rem;
+  display: inline-block;
+  margin-bottom: 1.25rem;
 }
 
 /* Botones */
 
 .boton {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.625rem;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.625rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 
 .boton-principal {
-    background-color: #4f46e5;
-    color: white;
+  background-color: #4f46e5;
+  color: white;
 }
 
 .boton-principal:hover {
-    background-color: #3730a3;
+  background-color: #3730a3;
 }
 
 .tarjeta .boton {
-    width: 100%;
+  width: 100%;
 }
 
 .registro {
-    margin-top: 1.5rem;
-    text-align: center;
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
 .enlace-secundario {
-    margin-top: 1.5rem;
-    text-align: center;
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
 .barra-navegacion {
-    position: sticky;
-    /* permito que se pegue al hacer scroll */
-    top: 0;
-    /* se pega al borde superior */
-    z-index: 10;
-    /* queda por encima del contenido */
-    padding: 1rem 1.5rem;
-    background-color: white;
-    border-bottom: 0.0625rem solid #dce1eb;
+  position: sticky; /* permito que se pegue al hacer scroll */
+  top: 0; /* se pega al borde superior */
+  z-index: 10; /* queda por encima del contenido */
+  padding: 1rem 1.5rem;
+  background-color: white;
+  border-bottom: 0.0625rem solid #dce1eb;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .barra-navegacion nav a {
-    display: block;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
-    color: #243047;
-    text-decoration: none;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #243047;
+  text-decoration: none;
 }
 
 .barra-navegacion nav a:hover,
 .barra-navegacion nav a.activo {
-    background-color: #eeecff;
-    color: #3730a3;
+  background-color: #eeecff;
+  color: #3730a3;
 }
 
 .dashboard {
-    width: 100%;
-    max-width: 75rem;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+  width: 100%;
+  max-width: 75rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
 .dashboard .titulo-seccion {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .dashboard .etiqueta-seccion {
-    color: #4f46e5;
-    font-size: 0.875rem;
-    font-weight: bold;
+  color: #4f46e5;
+  font-size: 0.875rem;
+  font-weight: bold;
 }
 
 /* Panel de estadísticas */
 
 .dashboard .estadisticas {
-    padding: 1.5rem;
-    background-color: white;
-    border: 0.0625rem solid #dce1eb;
-    border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  border: 0.0625rem solid #dce1eb;
+  border-radius: 1rem;
 }
 
 .dashboard .icono-estadistica {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* Apariencia de las tarjetas */
 
 .dashboard .tarjeta-curso {
-    padding: 1.5rem;
-    background-color: white;
-    border: 0.0625rem solid #dce1eb;
-    border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  border: 0.0625rem solid #dce1eb;
+  border-radius: 1rem;
 }
 
 .dashboard .bandera {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .dashboard .informacion-curso h2 {
-    margin: 0 0 0.25rem;
-    font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
 }
 
 .dashboard .informacion-curso p {
-    margin: 0 0 0.75rem;
-    color: #596579;
+  margin: 0 0 0.75rem;
+  color: #596579;
 }
 
 /* Espaciados del panel lateral */
 
 .dashboard .estadisticas h2 {
-    margin: 0 0 1.5rem;
+  margin: 0 0 1.5rem;
 }
 
-.dashboard .estadistica+.estadistica {
-    margin-top: 1.25rem;
+.dashboard .estadistica + .estadistica {
+  margin-top: 1.25rem;
 }
 
 .dashboard .estadistica p {
-    margin: 0.25rem 0 0;
-    color: #596579;
+  margin: 0.25rem 0 0;
+  color: #596579;
 }
 
 /* Barras de progreso de los cursos */
 
 .dashboard .barra-progreso {
-    display: block;
-    width: 100%;
-    height: 0.75rem;
-    margin-top: 0.5rem;
-    border: none;
-    border-radius: 1rem;
-    overflow: hidden;
-    appearance: none;
-    background-color: #e3e7f0;
+  display: block;
+  width: 100%;
+  height: 0.75rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  appearance: none;
+  background-color: #e3e7f0;
 }
 
-
 .dashboard .barra-progreso::-webkit-progress-value {
-    background-color: #4f46e5;
-    border-radius: 1rem;
+  background-color: #4f46e5;
+  border-radius: 1rem;
 }
 
 /* Ranking */
 
 .ranking {
-    width: 100%;
-    max-width: 65rem;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+  width: 100%;
+  max-width: 65rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
 .selector-ligas {
-    margin: 1.5rem 0;
-    border-bottom: 0.125rem solid #dce1eb;
+  margin: 1.5rem 0;
+  border-bottom: 0.125rem solid #dce1eb;
 }
 
 .tab-liga {
-    padding: 0.5rem 1rem;
-    color: #596579;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 0.1875rem solid transparent;
+  padding: 0.5rem 1rem;
+  color: #596579;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 0.1875rem solid transparent;
 }
 
 .tab-liga:hover,
 .tab-liga.liga-activa {
-    color: #4f46e5;
+  color: #4f46e5;
 }
 
 .tab-liga.liga-activa {
-    border-bottom-color: #4f46e5;
+  border-bottom-color: #4f46e5;
 }
 
 .tabla-clasificacion {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
 }
 
 .tabla-clasificacion th,
 .tabla-clasificacion td {
-    padding: 1rem;
-    border-bottom: 0.0625rem solid #dce1eb;
-    text-align: left;
+  padding: 1rem;
+  border-bottom: 0.0625rem solid #dce1eb;
+  text-align: left;
 }
 
 .tabla-clasificacion th {
-    background-color: #243047;
-    color: white;
+  background-color: #243047;
+  color: white;
 }
 
 .tabla-clasificacion .usuario-actual {
-    background-color: #eeecff;
-    font-weight: bold;
+  background-color: #eeecff;
+  font-weight: bold;
 }
 
 /* Perfil */
 
 .contenedor-perfil {
-    width: 100%;
-    max-width: 40rem;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+  width: 100%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
 .cabecera-perfil {
-    text-align: center;
-    overflow-wrap: anywhere;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .cabecera-perfil h1,
 .cabecera-perfil p {
-    margin: 0;
+  margin: 0;
 }
 
 .contenedor-perfil .avatar {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    background-color: #4f46e5;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: #4f46e5;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .contenedor-perfil .ajustes,
 .contenedor-perfil .logros {
-    padding: 1.5rem;
-    background-color: white;
-    border: 0.0625rem solid #dce1eb;
-    border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  border: 0.0625rem solid #dce1eb;
+  border-radius: 1rem;
 }
 
 .contenedor-perfil h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .boton-secundario {
-    background-color: #eeecff;
-    color: #3730a3;
+  background-color: #eeecff;
+  color: #3730a3;
 }
 
 .boton-secundario:hover {
-    background-color: #dedaff;
+  background-color: #dedaff;
 }
 
 /* Tienda y rachas */
 
 .contenedor-tienda {
-    width: 100%;
-    max-width: 50rem;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+  width: 100%;
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
 .cabecera-tienda .etiqueta-seccion {
-    color: #4f46e5;
-    font-size: 0.875rem;
-    font-weight: bold;
+  color: #4f46e5;
+  font-size: 0.875rem;
+  font-weight: bold;
 }
 
 .contenedor-tienda .racha,
 .contenedor-tienda .recompensas {
-    padding: 1.5rem;
-    background-color: white;
-    border: 0.0625rem solid #dce1eb;
-    border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  border: 0.0625rem solid #dce1eb;
+  border-radius: 1rem;
 }
 
 .contenedor-tienda h2 {
-    margin: 0 0 1rem;
+  margin: 0 0 1rem;
 }
 
 .contenedor-tienda .recompensa {
-    padding: 1rem;
-    border: 0.0625rem solid #dce1eb;
-    border-radius: 0.75rem;
-    background-color: #f8fafc;
+  padding: 1rem;
+  border: 0.0625rem solid #dce1eb;
+  border-radius: 0.75rem;
+  background-color: #f8fafc;
 }
 
 .contenedor-tienda .recompensa h3,
 .contenedor-tienda .recompensa p {
-    margin: 0;
+  margin: 0;
 }
 
 .contenedor-tienda .recompensa p {
-    color: #596579;
+  color: #596579;
 }
 
-.contenedor-tienda .recompensa>div {
-    font-size: 1.75rem;
+.contenedor-tienda .recompensa > div {
+  font-size: 1.75rem;
 }
 
 .contenedor-tienda .recompensa strong {
-    color: #4f46e5;
-    white-space: nowrap;
+  color: #4f46e5;
+  white-space: nowrap;
 }
 
 /* Mapas de cursos */
 
 .mapa-curso,
 .contenedor-curso {
-    width: 100%;
-    max-width: 50rem;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+  width: 100%;
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
 .cabecera-curso h1 {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .cabecera-curso .etiqueta-seccion {
-    color: #4f46e5;
-    font-size: 0.875rem;
-    font-weight: bold;
+  color: #4f46e5;
+  font-size: 0.875rem;
+  font-weight: bold;
 }
 
 .unidad,
 .mapa-lecciones,
 .siguiente-unidad {
-    padding: 1.5rem;
-    background-color: white;
-    border: 0.0625rem solid #dce1eb;
-    border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  border: 0.0625rem solid #dce1eb;
+  border-radius: 1rem;
 }
 
 .unidad h2,
 .mapa-lecciones h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .leccion {
-    padding: 1rem;
-    border: 0.0625rem solid #dce1eb;
-    border-radius: 0.75rem;
-    background-color: #f8fafc;
+  padding: 1rem;
+  border: 0.0625rem solid #dce1eb;
+  border-radius: 0.75rem;
+  background-color: #f8fafc;
 }
 
 .leccion h3 {
-    margin: 0 0 0.5rem;
+  margin: 0 0 0.5rem;
 }
 
 .leccion p {
-    margin: 0;
+  margin: 0;
 }
 
 .leccion.completada {
-    border-left: 0.35rem solid #15803d;
+  border-left: 0.35rem solid #15803d;
 }
 
 .leccion.en-progreso {
-    border-left: 0.35rem solid #ca8a04;
-    background-color: #fffbea;
+  border-left: 0.35rem solid #ca8a04;
+  background-color: #fffbea;
 }
 
 .leccion.bloqueada {
-    border-left: 0.35rem solid #64748b;
-    background-color: #eef1f5;
+  border-left: 0.35rem solid #64748b;
+  background-color: #eef1f5;
 }
 
 .leccion .estado,
 .leccion .icono-leccion {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
-/* --- ESTÉTICA DE LA LECCIÓN INTERACTIVA --- */
+/* Pantalla de lección */
 
-.encabezado-leccion {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: white;
-    border-bottom: 0.0625rem solid #dce1eb;
+.encabezado-leccion,
+.contenedor-leccion {
+  width: 100%;
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
-.encabezado-leccion a {
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #596579;
+.encabezado-leccion > a {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 
-.progreso-leccion {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex: 1;
-    max-width: 30rem;
-    margin: 0 2rem;
-}
-
-.progreso-leccion span {
-    font-weight: bold;
-    color: #596579;
-}
-
-.progreso-leccion strong {
-    color: #4f46e5;
+.progreso-leccion progress {
+  width: 100%;
+  height: 1rem;
+  accent-color: #4f46e5;
 }
 
 .vidas {
-    font-size: 1.25rem;
-}
-
-.contenedor-leccion {
-    width: 100%;
-    max-width: 45rem;
-    margin: 3rem auto;
-    padding: 0 1rem;
+  white-space: nowrap;
 }
 
 .ejercicio {
-    background-color: white;
-    padding: 2.5rem;
-    border: 0.0625rem solid #dce1eb;
-    border-radius: 1.25rem;
-    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  background-color: white;
+  border: 0.0625rem solid #dce1eb;
+  border-radius: 1rem;
 }
 
 .contenido-ejercicio h1 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0 1rem;
+  margin: 0.5rem 0 1.5rem;
+  font-size: 1.5rem;
+}
+
+.contenido-ejercicio .etiqueta-seccion {
+  color: #4f46e5;
+  font-weight: bold;
 }
 
 .frase {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #4f46e5;
-    margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: #eeecff;
+  font-size: 1.25rem;
 }
 
 .respuesta {
-    min-height: 3.5rem;
-    padding: 0.75rem;
-    border: 0.125rem dashed #aab3c2;
-    border-radius: 0.75rem;
-    background-color: #f8fafc;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  min-height: 4rem;
+  padding: 1rem;
+  border: 0.125rem dashed #aab3c2;
+  border-radius: 0.75rem;
 }
 
+.contenido-ejercicio hr {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 0.0625rem solid #dce1eb;
+}
+
+.acciones-ejercicio {
+  margin-top: 2rem;
+}
+
+/* Banco de palabras */
+
 .banco-palabras {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .lista-palabras {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
 }
 
-/* Fichas de palabras del banco */
 .lista-palabras .boton {
-    background-color: white;
-    color: #243047;
-    border: 0.0625rem solid #aab3c2;
-    border-bottom: 0.25rem solid #aab3c2;
-    border-radius: 0.75rem;
-    padding: 0.6rem 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.1s ease;
+  background-color: white;
+  color: #243047;
+  border: 0.0625rem solid #aab3c2;
+  border-bottom: 0.25rem solid #aab3c2;
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
 }
 
 .lista-palabras .boton:hover {
-    background-color: #f1f5f9;
+  background-color: #f1f5f9;
 }
 
-.acciones-ejercicio {
-    margin-top: 2rem;
-    border-top: 0.0625rem solid #dce1eb;
-    padding-top: 1.5rem;
-    text-align: right;
+.resultado {
+  display: none;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 0.125rem solid #dce1eb;
+  border-radius: 1rem;
+  background-color: white;
 }
 
-.acciones-ejercicio .boton {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
+.resultado:target {
+  display: block;
 }
 
-.encabezado-leccion {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: white;
-    border-bottom: 0.0625rem solid #dce1eb;
+.resultado h2 {
+  margin-top: 0;
 }
 
-.progreso-leccion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    max-width: 25rem;
-    margin: 0 2rem;
+.resultado-correcto {
+  border-color: #15803d;
+  background-color: #f0fdf4;
 }
 
-.progreso-leccion span {
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: #596579;
-    margin-bottom: 0.25srem;
-}
-
-/* Estilo para la barra de progreso superior en lecciones */
-.progreso-leccion .barra-progreso {
-    display: block;
-    width: 100%;
-    height: 0.75rem;
-    border: none;
-    border-radius: 1rem;
-    overflow: hidden;
-    appearance: none;
-    background-color: #e3e7f0;
-}
-
-.progreso-leccion .barra-progreso::-webkit-progress-value {
-    background-color: #4f46e5;
-    border-radius: 1rem;
-}
-
-.acciones-ejercicio {
-    margin-top: 2rem;
-    border-top: 0.0625rem solid #dce1eb;
-    padding-top: 1.5rem;
-}
-
-.acciones-ejercicio .boton {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-    text-align: center;
+.resultado-incorrecto {
+  border-color: #b91c1c;
+  background-color: #fef2f2;
 }

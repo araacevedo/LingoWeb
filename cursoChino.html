@@ -1,144 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chino Mandarín | LingoWeb</title>
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
-</head>
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="barra-navegacion">
+      <a href="dashboard.html" class="logo"> LingoWeb </a>
 
-         <a href="dashboard.html" class="logo">
-            LingoWeb
-        </a>
+      <nav aria-label="Navegación principal">
+        <a href="dashboard.html" class="activo"> Cursos </a>
 
-        <nav aria-label="Navegación principal">
+        <a href="perfil.html"> Perfil </a>
 
-            <a href="dashboard.html" class="activo">
-                Cursos
-            </a>
+        <a href="ranking.html"> Ranking </a>
 
-            <a href="perfil.html">
-                Perfil
-            </a>
+        <a href="tienda.html"> Tienda / Rachas </a>
 
-            <a href="ranking.html">
-                Ranking
-            </a>
-
-            <a href="tienda.html">
-                Tienda / Rachas
-            </a>
-
-             <a href="login.html" class="enlace-salir">
-                Salir
-            </a>
-
-        </nav>
-
+        <a href="login.html" class="enlace-salir"> Salir </a>
+      </nav>
     </header>
 
-
     <main class="contenedor-curso">
+      <section class="cabecera-curso">
+        <a href="dashboard.html"> ← Volver a Cursos </a>
 
-        <section class="cabecera-curso">
+        <p class="etiqueta-seccion">CURSO</p>
 
-            <a href="dashboard.html">
-                ← Volver a Cursos
-            </a>
+        <h1>Chino Mandarín desde Español</h1>
 
-            <p class="etiqueta-seccion">
-                CURSO
-            </p>
+        <p>Unidad 1: Introducción y Saludos</p>
+      </section>
 
-            <h1>
-                Chino Mandarín desde Español
-            </h1>
+      <section class="mapa-lecciones">
+        <h2>Unidad 1: Introducción y Saludos</h2>
 
-            <p>
-                Unidad 1: Introducción y Saludos
-            </p>
+        <article class="leccion en-progreso">
+          <div class="icono-leccion">🟡</div>
 
-        </section>
+          <div>
+            <h3>Lección 1 — Frases Básicas</h3>
 
+            <p>En Curso</p>
+          </div>
 
-        <section class="mapa-lecciones">
+          <a href="leccionChino.html" class="boton boton-principal">
+            Iniciar
+          </a>
+        </article>
 
-            <h2>
-                Unidad 1: Introducción y Saludos
-            </h2>
+        <article class="leccion bloqueada">
+          <div class="icono-leccion">🔒</div>
 
+          <div>
+            <h3>Lección 2 — Presentaciones</h3>
 
-            <article class="leccion en-progreso">
+            <p>Bloqueado</p>
+          </div>
+        </article>
 
-                <div class="icono-leccion">
-                    🟡
-                </div>
+        <article class="leccion bloqueada">
+          <div class="icono-leccion">🔒</div>
 
-                <div>
-                    <h3>
-                        Lección 1 — Frases Básicas
-                    </h3>
+          <div>
+            <h3>Lección 3 — Vocabulario de Familia</h3>
 
-                    <p>
-                        En Curso
-                    </p>
-                </div>
-
-                <a href="leccionChino.html" class="boton boton-principal">
-                    Iniciar
-                </a>
-
-            </article>
-
-
-            <article class="leccion bloqueada">
-
-                <div class="icono-leccion">
-                    🔒
-                </div>
-
-                <div>
-                    <h3>
-                        Lección 2 — Presentaciones
-                    </h3>
-
-                    <p>
-                        Bloqueado
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="leccion bloqueada">
-
-                <div class="icono-leccion">
-                    🔒
-                </div>
-
-                <div>
-                    <h3>
-                        Lección 3 — Vocabulario de Familia
-                    </h3>
-
-                    <p>
-                        Bloqueado
-                    </p>
-                </div>
-
-            </article>
-
-        </section>
-
+            <p>Bloqueado</p>
+          </div>
+        </article>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>

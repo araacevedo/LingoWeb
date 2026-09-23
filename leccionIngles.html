@@ -1,84 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lección de Inglés | LingoWeb</title>
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
-</head>
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="encabezado-leccion">
+      <a href="cursoIngles.html" aria-label="Salir de la lección"> ✕ </a>
 
-        <a href="cursoIngles.html" aria-label="Salir de la lección">
-            ✕
-        </a>
+      <div class="progreso-leccion">
+        <span>Lección 2</span>
+        <strong>2 / 5</strong>
 
-        <div class="progreso-leccion">
-            <span>Lección 2 (40%)</span>
-            <progress class="barra-progreso" value="40" max="100" aria-label="Progreso de la lección">40%</progress>
-        </div>
+        <progress value="2" max="5" aria-label="Avance de la lección">
+          2 de 5
+        </progress>
+      </div>
 
-        <div class="vidas" aria-label="Vidas restantes">
-            ❤️❤️❤️
-        </div>
-
+      <div class="vidas" aria-label="Vidas restantes">❤️❤️❤️</div>
     </header>
 
     <main class="contenedor-leccion">
+      <section class="ejercicio" id="ejercicio">
+        <div class="contenido-ejercicio">
+          <p class="etiqueta-seccion">INGLÉS</p>
 
-        <section class="ejercicio">
+          <h1>Traduce la siguiente oración:</h1>
 
-            <div class="contenido-ejercicio">
+          <p class="frase">"Good morning, how are you?"</p>
 
-                <p class="etiqueta-seccion">
-                    INGLÉS
-                </p>
+          <div class="respuesta">[ Buenos ] [ días ] [ ¿cómo ] [ estás? ]</div>
 
-                <h1>
-                    Traduce la siguiente oración:
-                </h1>
+          <hr />
+          <div class="banco-palabras">
+            <p>Banco de palabras disponibles:</p>
+            <ul class="lista-palabras">
+              <li><button type="button" class="boton">Hola</button></li>
+              <li><button type="button" class="boton">días</button></li>
+              <li><button type="button" class="boton">estás?</button></li>
+              <li><button type="button" class="boton">Gracias</button></li>
+              <li><button type="button" class="boton">¿cómo</button></li>
+              <li><button type="button" class="boton">Buenos</button></li>
+              <li><button type="button" class="boton">Adiós</button></li>
+            </ul>
+          </div>
+        </div>
 
-                <p class="frase">
-                    "Good morning, how are you?"
-                </p>
+        <footer class="acciones-ejercicio">
+          <a href="#resultado-correcto" class="boton boton-principal">
+            Comprobar respuesta
+          </a>
+        </footer>
 
-                <div class="respuesta">
-                    [ Buenos ] [ días ] [ ¿cómo ] [ estás? ]
-                </div>
+        <p>Demostración con una respuesta correcta precargada.</p>
 
-                <hr>
-                <div class="banco-palabras">
-                    <p>Banco de palabras disponibles:</p>
-                    <ul class="lista-palabras">
-                        <li><button type="button" class="boton">Hola</button></li>
-                        <li><button type="button" class="boton">días</button></li>
-                        <li><button type="button" class="boton">estás?</button></li>
-                        <li><button type="button" class="boton">Gracias</button></li>
-                        <li><button type="button" class="boton">¿cómo</button></li>
-                        <li><button type="button" class="boton">Buenos</button></li>
-                        <li><button type="button" class="boton">Adiós</button></li>
-                    </ul>
-                </div>
+        <a href="#resultado-incorrecto">
+          Ver ejemplo de respuesta incorrecta
+        </a>
+      </section>
 
-            </div>
+      <section id="resultado-correcto" class="resultado resultado-correcto">
+        <h2>✓ Respuesta correcta</h2>
+        <p>
+          “Good morning, how are you?” significa “Buenos días, ¿cómo estás?”.
+        </p>
 
-            <footer class="acciones-ejercicio">
+        <a href="#finalizacion" class="boton boton-principal">
+          Finalizar demostración
+        </a>
+      </section>
 
-                <button type="button">
-                    Comprobar Respuesta
-                </button>
+      <section id="resultado-incorrecto" class="resultado resultado-incorrecto">
+        <h2>✕ Respuesta incorrecta</h2>
+        <p>La traducción esperada es “Buenos días, ¿cómo estás?”.</p>
 
-            </footer>
+        <a href="#ejercicio" class="boton boton-secundario">
+          Volver al ejercicio
+        </a>
+      </section>
 
-        </section>
+      <section id="finalizacion" class="resultado">
+        <h2>Demostración finalizada</h2>
+        <p>Terminaste este ejercicio de ejemplo.</p>
 
+        <a href="cursoIngles.html" class="boton boton-principal">
+          Volver al curso
+        </a>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>
