@@ -40,17 +40,16 @@
             </p>
 
 
-            <form action="dashboard.html" method="POST">
+            <form action="dashboard.html" method="get">
 
                 <div class="campo">
 
                     <label
-                        for="email"><!--El label for representa el texto que se muestra junto al campo de entrada. El for del label siempre debe coincidir con el id del input-->
-                        Usuario / Email:
+                        for="usuario"><!--El label for representa el texto que se muestra junto al campo de entrada. El for del label siempre debe coincidir con el id del input-->
+                        Usuario:
                     </label>
 
-                    <input type="email" id="email" name="email" placeholder="Ingresa tu email"
-                        required><!--input type representa el tipo de campo de entrada y placeholder representa el texto de ayuda-->
+                    <input type="text" id="usuario" placeholder="Ingresa tu usuario" required><!--input type representa el tipo de campo de entrada y placeholder representa el texto de ayuda-->
 
                 </div>
 
@@ -61,8 +60,7 @@
                         Contraseña:
                     </label>
 
-                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña"
-                        required><!--Required nos indica que no debe enviarse vacío-->
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required><!--Required nos indica que no debe enviarse vacío-->
 
                 </div>
 
@@ -71,9 +69,8 @@
                     ¿Olvidaste tu contraseña?
                 </a>
 
-                <!-- Usamos el botón nativo de envío de formulario -->
                 <button type="submit" class="boton boton-principal">
-                    Iniciar Sesión
+                    Iniciar sesión
                 </button>
 
             </form>
