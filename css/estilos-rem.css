@@ -162,3 +162,70 @@ a {
     color: #3730a3;
 }
 
+.dashboard {
+    width: 100%;
+    max-width: 75rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.dashboard .titulo-seccion {
+    margin-bottom: 1.5rem;
+}
+
+.dashboard .etiqueta-seccion {
+    color: #4f46e5;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+/* Panel de estadísticas */
+
+.dashboard .estadisticas {
+    padding: 1.5rem;
+    background-color: white;
+    border: 0.0625rem solid #dce1eb;
+    border-radius: 1rem;
+}
+
+.dashboard .icono-estadistica {
+    font-size: 1.5rem;
+}
+
+/* Apariencia de las tarjetas */
+
+.dashboard .tarjeta-curso {
+    padding: 1.5rem;
+    background-color: white;
+    border: 0.0625rem solid #dce1eb;
+    border-radius: 1rem;
+}
+
+.dashboard .bandera {
+    font-size: 2.5rem;
+}
+
+.dashboard .informacion-curso h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.25rem;
+}
+
+.dashboard .informacion-curso p {
+    margin: 0 0 0.75rem;
+    color: #596579;
+}
+
+/* Espaciados del panel lateral */
+
+.dashboard .estadisticas h2 {
+    margin: 0 0 1.5rem;
+}
+
+.dashboard .estadistica + .estadistica {
+    margin-top: 1.25rem;
+}
+
+.dashboard .estadistica p {
+    margin: 0.25rem 0 0;
+    color: #596579;
+}

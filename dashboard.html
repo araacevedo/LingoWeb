@@ -1,310 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>LingoWeb - Mis cursos</title>
 
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
-</head>
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="barra-navegacion">
+      <a href="dashboard.html" class="logo"> LingoWeb </a>
 
-        <a href="dashboard.html" class="logo">
-            LingoWeb
+      <nav aria-label="Navegación principal">
+        <!--aria label es un atributo de accesibilidad que lo que hace es proporcionar un nombre descriptivo a un elemento HTML para tecnologias de asistencia como, por ejemplo, lectores de pantalla-->
+
+        <a href="dashboard.html" class="activo">
+          <!--activo es simplemente un nombre de clase elegido para visibilizar que se trata de la pagina actual que estamos navegando-->
+          Cursos
         </a>
 
+        <a href="perfil.html"> Perfil </a>
 
-        <nav aria-label="Navegación principal"><!--aria label es un atributo de accesibilidad que lo que hace es proporcionar un nombre descriptivo a un elemento HTML para tecnologias de asistencia como, por ejemplo, lectores de pantalla-->
+        <a href="ranking.html"> Ranking </a>
 
-            <a href="dashboard.html" class="activo"> <!--activo es simplemente un nombre de clase elegido para visibilizar que se trata de la pagina actual que estamos navegando-->
-                Cursos
-            </a>
-
-            <a href="perfil.html">
-                Perfil
-            </a>
-
-            <a href="ranking.html">
-                Ranking
-            </a>
-
-            <a href="tienda.html">
-                Tienda / Rachas
-            </a>
-
-        </nav>
-
+        <a href="tienda.html"> Tienda / Rachas </a>
+      </nav>
     </header>
 
-
     <main class="dashboard">
+      <section class="cursos">
+        <header class="titulo-seccion">
+          <p class="etiqueta-seccion">
+            <!--etiqueta visual de seccion para darle luego un estilo especifico en CSS-->
+            MI APRENDIZAJE
+          </p>
 
-        <section class="cursos">
+          <h1>Mis Cursos de Idiomas</h1>
 
-            <header class="titulo-seccion">
+          <p>Continúa aprendiendo y alcanza tus objetivos.</p>
+        </header>
 
-                <p class="etiqueta-seccion"> <!--etiqueta visual de seccion para darle luego un estilo especifico en CSS-->
-                    MI APRENDIZAJE
-                </p>
+        <div class="contenedor-cursos">
+          <!-- INGLÉS -->
 
-                <h1>
-                    Mis Cursos de Idiomas
-                </h1>
+          <article class="tarjeta-curso">
+            <div class="bandera">🇬🇧</div>
 
-                <p>
-                    Continúa aprendiendo y alcanza tus objetivos.
-                </p>
+            <div class="informacion-curso">
+              <h2>Inglés</h2>
+              <p>Inglés desde Español</p>
 
-            </header>
+              <div class="progreso-info">
+                <span>Progreso</span>
+                <strong>45%</strong>
+              </div>
 
-
-            <div class="contenedor-cursos">
-
-
-                <!-- INGLÉS -->
-
-                <article class="tarjeta-curso"> <!--usamos article porque cada curso es una unidad de contenido relativamente independiente--->
-
-                    <div class="bandera">
-                        🇬🇧
-                    </div>
-
-                    <div class="informacion-curso">
-
-                        <h2>
-                            Inglés
-                        </h2>
-
-                        <p>
-                            Inglés desde Español
-                        </p>
-
-                        <div class="progreso-info">
-
-                            <span><!--span marca un elemento generico y lo aisla para poder tratarlo con CSS-->
-                                Progreso
-                            </span>
-
-                            <strong><!--strong representa un texto importante, destacado, o en negrita-->
-                                45%
-                            </strong>
-
-                        </div>
-
-                        </div>
-
-                        <p class="nivel">
-                            Nivel: Intermedio (B1)
-                        </p>
-
-                    </div>
-
-
-                    <a href="cursoIngles.html" class="boton boton-principal">
-                        Continuar
-                    </a>
-
-                </article>
-
-
-                <!-- ALEMÁN -->
-
-                <article class="tarjeta-curso">
-
-                    <div class="bandera">
-                        🇩🇪
-                    </div>
-
-                    <div class="informacion-curso">
-
-                        <h2>
-                            Alemán
-                        </h2>
-
-                        <p>
-                            Alemán desde Español
-                        </p>
-
-                        <div class="progreso-info">
-
-                            <span>
-                                Progreso
-                            </span>
-
-                            <strong>
-                                12%
-                            </strong>
-
-                        </div>
-
-                        <p class="nivel">
-                            Nivel: Principiante (A1)
-                        </p>
-
-                    </div>
-
-
-                    <a href="cursoAleman.html" class="boton boton-principal">
-                        Continuar
-                    </a>
-
-                </article>
-
-
-                <!-- CHINO -->
-
-                <article class="tarjeta-curso">
-
-                    <div class="bandera">
-                        🇨🇳
-                    </div>
-
-                    <div class="informacion-curso">
-
-                        <h2>
-                            Chino Mandarín
-                        </h2>
-
-                        <p>
-                            Chino desde Español
-                        </p>
-
-                        <div class="progreso-info">
-
-                            <span>
-                                Progreso
-                            </span>
-
-                            <strong>
-                                0%
-                            </strong>
-
-                        </div>
-
-                        <div class="barra-progreso">
-
-                            <div class="progreso" style="width: 0%;">
-                            </div>
-
-                        </div>
-
-                        <p class="nivel">
-                            Nivel: Inicial (HSK 1)
-                        </p>
-
-                    </div>
-
-
-                    <a href="cursoChino.html" class="boton boton-principal">
-                        Empezar
-                    </a>
-
-                </article>
-
-
+              <p class="nivel">Nivel: Intermedio (B1)</p>
             </div>
 
-        </section>
+            <a href="cursoIngles.html" class="boton boton-principal">
+              Continuar
+            </a>
+          </article>
 
+          <!-- ALEMÁN -->
 
-        <aside class="estadisticas"><!--utilizamos aside para contenido relacionado pero secundario-->
+          <article class="tarjeta-curso">
+            <div class="bandera">🇩🇪</div>
 
-            <h2>
-                Estadísticas
-            </h2>
+            <div class="informacion-curso">
+              <h2>Alemán</h2>
 
+              <p>Alemán desde Español</p>
 
-            <div class="estadistica"><!--"<div class="estadistica">" se repite porque cada uno de esos bloques representa una estadistica independiente, que tendran todos el mismo diseño en el CSS-->
+              <div class="progreso-info">
+                <span> Progreso </span>
 
-                <span class="icono-estadistica">
-                    🔥
-                </span>
+                <strong> 12% </strong>
+              </div>
 
-                <div>
-
-                    <strong>
-                        5 Días
-                    </strong>
-
-                    <p>
-                        Racha actual
-                    </p>
-
-                </div>
-
+              <p class="nivel">Nivel: Principiante (A1)</p>
             </div>
 
+            <a href="cursoAleman.html" class="boton boton-principal">
+              Continuar
+            </a>
+          </article>
 
-            <div class="estadistica">
+          <!-- CHINO -->
 
-                <span class="icono-estadistica">
-                    ⚡
-                </span>
+          <article class="tarjeta-curso">
+            <div class="bandera">🇨🇳</div>
 
-                <div>
+            <div class="informacion-curso">
+              <h2>Chino Mandarín</h2>
 
-                    <strong>
-                        350 XP
-                    </strong>
+              <p>Chino desde Español</p>
 
-                    <p>
-                        Experiencia acumulada
-                    </p>
+              <div class="progreso-info">
+                <span> Progreso </span>
 
-                </div>
+                <strong> 0% </strong>
+              </div>
 
+              <div class="barra-progreso">
+                <div class="progreso" style="width: 0%"></div>
+              </div>
+
+              <p class="nivel">Nivel: Inicial (HSK 1)</p>
             </div>
 
+            <a href="cursoChino.html" class="boton boton-principal">
+              Empezar
+            </a>
+          </article>
+        </div>
+      </section>
 
-            <div class="estadistica">
+      <aside class="estadisticas">
+        <!--utilizamos aside para contenido relacionado pero secundario-->
 
-                <span class="icono-estadistica">
-                    🏆
-                </span>
+        <h2>Estadísticas</h2>
 
-                <div>
+        <div class="estadistica">
+          <!--"<div class="estadistica">" se repite porque cada uno de esos bloques representa una estadistica independiente, que tendran todos el mismo diseño en el CSS-->
 
-                    <strong>
-                        Liga Bronce
-                    </strong>
+          <span class="icono-estadistica"> 🔥 </span>
 
+          <div>
+            <strong> 5 Días </strong>
 
-                </div>
+            <p>Racha actual</p>
+          </div>
+        </div>
 
-            </div>
+        <div class="estadistica">
+          <span class="icono-estadistica"> ⚡ </span>
 
+          <div>
+            <strong> 350 XP </strong>
 
-            <div class="estadistica">
+            <p>Experiencia acumulada</p>
+          </div>
+        </div>
 
-                <span class="icono-estadistica">
-                    🎯
-                </span>
+        <div class="estadistica">
+          <span class="icono-estadistica"> 🏆 </span>
 
-                <div>
+          <div>
+            <strong> Liga Bronce </strong>
+          </div>
+        </div>
 
-                    <strong>
-                        50 XP
-                    </strong>
+        <div class="estadistica">
+          <span class="icono-estadistica"> 🎯 </span>
 
-                    <p>
-                        Meta diaria
-                    </p>
+          <div>
+            <strong> 50 XP </strong>
 
-                </div>
-
-            </div>
-
-        </aside>
-
+            <p>Meta diaria</p>
+          </div>
+        </div>
+      </aside>
     </main>
-
-</body>
-
+  </body>
 </html>

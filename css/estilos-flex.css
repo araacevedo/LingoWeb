@@ -23,3 +23,70 @@
     flex-direction: column;
     gap: 0.375rem;
 }
+
+/* Navegación */
+
+.barra-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Cursos y panel lateral */
+
+.dashboard {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+
+.dashboard .cursos {
+    flex: 1;
+    /* ocupa el espacio disponible, pero no lo obliga a crecer mas alla de su contenido */
+    min-width: 0;
+}
+
+.dashboard .estadisticas {
+    flex: 0 0 18rem;
+    /* mantiene su tamaño fijo, no crece ni se encoge, y tiene un ancho de 18rem */
+}
+
+.dashboard .estadistica {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.barra-navegacion nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Tarjetas de cursos */
+
+.dashboard .contenedor-cursos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dashboard .tarjeta-curso {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.dashboard .informacion-curso {
+    flex: 1;
+    min-width: 0;
+}
+
+.dashboard .progreso-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
