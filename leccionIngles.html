@@ -26,7 +26,7 @@
     </header>
 
     <main class="contenedor-leccion">
-      <section class="ejercicio">
+      <section class="ejercicio" id="ejercicio">
         <div class="contenido-ejercicio">
           <p class="etiqueta-seccion">INGLÉS</p>
 
@@ -52,10 +52,45 @@
         </div>
 
         <footer class="acciones-ejercicio">
-          <button type="button" class="boton boton-principal">
-            Comprobar Respuesta
-          </button>
+          <a href="#resultado-correcto" class="boton boton-principal">
+            Comprobar respuesta
+          </a>
         </footer>
+
+        <p>Demostración con una respuesta correcta precargada.</p>
+
+        <a href="#resultado-incorrecto">
+          Ver ejemplo de respuesta incorrecta
+        </a>
+      </section>
+
+      <section id="resultado-correcto" class="resultado resultado-correcto">
+        <h2>✓ Respuesta correcta</h2>
+        <p>
+          “Good morning, how are you?” significa “Buenos días, ¿cómo estás?”.
+        </p>
+
+        <a href="#finalizacion" class="boton boton-principal">
+          Finalizar demostración
+        </a>
+      </section>
+
+      <section id="resultado-incorrecto" class="resultado resultado-incorrecto">
+        <h2>✕ Respuesta incorrecta</h2>
+        <p>La traducción esperada es “Buenos días, ¿cómo estás?”.</p>
+
+        <a href="#ejercicio" class="boton boton-secundario">
+          Volver al ejercicio
+        </a>
+      </section>
+
+      <section id="finalizacion" class="resultado">
+        <h2>Demostración finalizada</h2>
+        <p>Terminaste este ejercicio de ejemplo.</p>
+
+        <a href="cursoIngles.html" class="boton boton-principal">
+          Volver al curso
+        </a>
       </section>
     </main>
   </body>
