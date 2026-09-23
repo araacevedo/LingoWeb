@@ -12,21 +12,28 @@
 
 <body>
 
-    <header>
-        <nav>
-            <a href="dashboard.html">LingoWeb</a>
+    <header class="encabezado-principal">
 
-            <ul>
-                <li>
-                    <a href="dashboard.html">Cursos</a>
-                </li>
-                <li>
-                    <a href="perfil.html">Perfil</a>
-                </li>
-                <li>
-                    <a href="ranking.html" aria-current="page">Ranking</a>
-                </li>
-            </ul>
+        <nav aria-label="Navegación principal">
+            <a href="dashboard.html">
+                Cursos
+            </a>
+
+            <a href="perfil.html" class="activo">
+                Perfil
+            </a>
+
+            <a href="ranking.html">
+                Clasificación
+            </a>
+
+            <a href="tienda.html">
+                Tienda / Rachas
+            </a>
+
+            <a href="login.html" class="enlace-salir">
+                Salir
+            </a>
         </nav>
     </header>
 
@@ -38,7 +45,8 @@
 
                 <h1>🏆 Tabla de Clasificación</h1>
 
-                <nav class="selector-ligas" aria-label="Selector de Ligas"> <!--Para que <select> funcione como un menú de navegación, se necesita capturar el clic utilizando JavaScript. Se cambia por un <nav> que anida <a> para lograr ogramos simular un selector interactivo.-->
+                <nav class="selector-ligas" aria-label="Selector de Ligas">
+                    <!--Para que <select> funcione como un menú de navegación, se necesita capturar el clic utilizando JavaScript. Se cambia por un <nav> que anida <a> para lograr ogramos simular un selector interactivo.-->
                     <a href="ranking.html" class="tab-liga liga-activa">🥉 Liga Bronce</a>
                     <a href="rankingPlata.html" class="tab-liga">🥈 Liga Plata</a>
                     <a href="rankingOro.html" class="tab-liga">🥇 Liga Oro</a>
@@ -52,20 +60,23 @@
                 <table class="tabla-clasificacion"> <!--Usamos table para datos tabulares-->
                     <thead> <!--Agrupa el contenido de encabezado (títulos de las columnas)-->
                         <tr><!-- Define una fila horizontal que contendrá celdas-->
-                            <th>Puesto</th><!--<th> Define una celda de encabezado. El texto suele ser negrita y centrado por defecto; indica el "nombre" de la fila o columna--> 
+                            <th>Puesto</th>
+                            <!--<th> Define una celda de encabezado. El texto suele ser negrita y centrado por defecto; indica el "nombre" de la fila o columna-->
                             <th>Estudiante</th>
                             <th>XP Semanal</th>
                             <th>Estado</th>
                         </tr>
                     </thead>
 
-                    <tbody><!-- Contiene el cuerpo principal de los datos. Puede haber varios en una sola tabla para separar secciones de datos-->
+                    <tbody>
+                        <!-- Contiene el cuerpo principal de los datos. Puede haber varios en una sola tabla para separar secciones de datos-->
 
                         <tr>
                             <td>🥇 1</td>
                             <td>MariaG_22</td>
                             <td>850 XP</td>
-                            <td>Zona de Ascenso</td><!--<td> Es la celda estándar que contiene los datos o valores específicos-->
+                            <td>Zona de Ascenso</td>
+                            <!--<td> Es la celda estándar que contiene los datos o valores específicos-->
                         </tr>
 
                         <tr class="usuario-actual">
