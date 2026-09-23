@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LingoWeb - Ranking</title>
+    <title>LingoWeb - Ranking Bronce</title>
     <link rel="stylesheet" href="css/estilos-rem.css">
     <link rel="stylesheet" href="css/estilos-flex.css">
     <link rel="stylesheet" href="css/estilos-responsive.css">
@@ -38,31 +38,19 @@
 
                 <h1>🏆 Tabla de Clasificación</h1>
 
-                <div class="liga-selector">
+                <nav class="selector-ligas" aria-label="Selector de Ligas"> <!--Para que <select> funcione como un menú de navegación, se necesita capturar el clic utilizando JavaScript. Se cambia por un <nav> que anida <a> para lograr ogramos simular un selector interactivo.-->
+                    <a href="ranking.html" class="tab-liga liga-activa">🥉 Liga Bronce</a>
+                    <a href="rankingPlata.html" class="tab-liga">🥈 Liga Plata</a>
+                    <a href="rankingOro.html" class="tab-liga">🥇 Liga Oro</a>
+                </nav>
 
-                    <label for="liga">Liga actual:</label><!--Utilizar un label nos permite indicar que este selector sirve para elegir la liga (el cual debe estar asociado al id)-->
-
-                    <select id="liga" name="liga"><!--La consigna pide un selector de liga actual para esta vista. Debajo definimos las opciones con sus valores posibles-->
-                        <option value="bronce" selected>Liga de Bronce</option>
-                        <option value="plata">Liga de Plata</option>
-                        <option value="oro">Liga de Oro</option>
-                    </select>
-
-                </div>
-
-                <h1>🏆 Tabla de Clasificación - Liga de Bronce</h1>
-              
-                <p>
-                    Los 5 primeros ascienden a la Liga de Plata esta semana.
-                </p>
-
+                <p>Los 5 primeros ascienden a la Liga de Plata esta semana.</p>
             </header>
 
             <div class="ranking-table-container">
 
-                <table><!--Usamos table para datos tabulares-->
-
-                    <thead><!--Agrupa el contenido de encabezado (títulos de las columnas)-->
+                <table class="tabla-clasificacion"> <!--Usamos table para datos tabulares-->
+                    <thead> <!--Agrupa el contenido de encabezado (títulos de las columnas)-->
                         <tr><!-- Define una fila horizontal que contendrá celdas-->
                             <th>Puesto</th><!--<th> Define una celda de encabezado. El texto suele ser negrita y centrado por defecto; indica el "nombre" de la fila o columna--> 
                             <th>Estudiante</th>
@@ -86,16 +74,13 @@
                             <td>720 XP</td>
                             <td>Zona de Ascenso</td>
                         </tr>
-
                         <tr>
                             <td>🥉 3</td>
                             <td>Carlos_Dev</td>
                             <td>610 XP</td>
                             <td>Zona de Ascenso</td>
                         </tr>
-
                     </tbody>
-
                 </table>
 
             </div>
