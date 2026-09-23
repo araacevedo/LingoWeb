@@ -1,194 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil | LingoWeb</title>
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
-</head>
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
+  </head>
 
-<body>
+  <body>
+    <header class="barra-navegacion">
+      <a href="dashboard.html" class="logo">LingoWeb</a>
+      <nav aria-label="Navegación principal">
+        <a href="dashboard.html"> Cursos </a>
 
-    <header class="encabezado-principal">
+        <a href="perfil.html" class="activo"> Perfil </a>
 
-        <nav aria-label="Navegación principal">
+        <a href="ranking.html"> Clasificación </a>
 
-            <a href="dashboard.html">
-                Cursos
-            </a>
+        <a href="tienda.html"> Tienda / Rachas </a>
 
-            <a href="perfil.html" class="activo">
-                Perfil
-            </a>
-
-            <a href="ranking.html">
-                Clasificación
-            </a>
-
-            <a href="tienda.html">
-                Tienda / Rachas
-            </a>
-
-            <a href="login.html" class="enlace-salir">
-                Salir
-            </a>
-
-        </nav>
-
+        <a href="login.html" class="enlace-salir"> Salir </a>
+      </nav>
     </header>
 
-
     <main class="contenedor-perfil">
+      <section class="cabecera-perfil">
+        <div class="avatar">PR</div>
 
-        <section class="cabecera-perfil">
+        <h1>Pedro Ramirez</h1>
 
-            <div class="avatar">
-                PR
-            </div>
+        <p>@pedro</p>
 
-            <h1>
-                Pedro Ramirez
-            </h1>
+        <p>pedro@lingoweb.edu</p>
+      </section>
 
-            <p>
-                @Pedro
-            </p>
+      <section class="ajustes">
+        <h2>Ajustes de cuenta</h2>
 
-            <p>
-                Pedro_usuarioEjemplo@lingoweb.edu
-            </p>
+        <form action="perfil.html" method="get">
+          <div class="campo">
+            <label for="usuario"> Usuario </label>
 
-        </section>
+            <input type="text" id="usuario" value="pedro" />
+          </div>
 
+          <div class="campo">
+            <label for="email"> Email institucional </label>
 
-        <section class="ajustes">
+            <input type="email" id="email" value="pedro@lingoweb.edu" />
+          </div>
 
-            <h2>
-                Ajustes de cuenta
-            </h2>
+          <div class="campo">
+            <label for="password-actual">Contraseña actual</label>
+            <input
+              type="password"
+              id="password-actual"
+              autocomplete="current-password"
+            />
+          </div>
 
-            <form action="login.html" method="POST">
+          <div class="campo">
+            <label for="password-nueva">Nueva contraseña</label>
+            <input
+              type="password"
+              id="password-nueva"
+              autocomplete="new-password"
+            />
+          </div>
 
-                <div class="campo">
+          <div class="campo">
+            <label for="password-confirmacion">
+              Confirmar nueva contraseña
+            </label>
+            <input
+              type="password"
+              id="password-confirmacion"
+              autocomplete="new-password"
+            />
+          </div>
 
-                    <label for="usuario">
-                        Usuario
-                    </label>
+          <div class="campo">
+            <label for="idioma"> Idioma de interfaz </label>
 
-                    <input type="text" id="usuario" name="usuario" value="pedro">
+            <select id="idioma">
+              <option value="es" selected>Español</option>
 
-                </div>
+              <option value="en">English</option>
+            </select>
+          </div>
 
+          <div class="acciones-perfil">
+            <button type="submit" class="boton boton-principal">
+              Guardar cambios
+            </button>
 
-                <div class="campo">
+            <a href="login.html" class="boton boton-secundario">
+              Cerrar sesión
+            </a>
+          </div>
+        </form>
+      </section>
 
-                    <label for="email">
-                        Email institucional
-                    </label>
+      <section class="logros">
+        <h2>Mis logros</h2>
 
-                    <input type="email" id="email" name="email" value="pedro@lingoweb.edu">
+        <div class="estadistica">
+          <span> ⚡ XP acumulados </span>
 
-                </div>
+          <strong> 350 XP </strong>
+        </div>
 
+        <div class="estadistica">
+          <span> 🔥 Racha actual </span>
 
-                <div class="campo">
+          <strong> 5 días </strong>
+        </div>
 
-                    <label for="password">
-                        Nueva contraseña
-                    </label>
+        <div class="estadistica">
+          <span> 🏆 Liga </span>
 
-                    <input type="password" id="password" name="password">
-
-                </div>
-
-
-                <div class="campo">
-
-                    <label for="idioma">
-                        Idioma de interfaz
-                    </label>
-
-                    <select id="idioma" name="idioma">
-
-                        <option value="es" selected>
-                            Español
-                        </option>
-
-                        <option value="en">
-                            English
-                        </option>
-
-                    </select>
-
-                </div>
-
-                <div class="guardar cambios>
-                    <button type="submit" class="boton boton-principal">
-                        Guardar cambios
-                    </button>
-                </div>
-             
-                <div class="cerrar sesion>
-                    <button type="submit" class="boton boton-principal">
-                        Cerrar Sesion
-                    </button>
-                </div>
-
-            </form>
-
-        </section>
-
-
-        <section class="logros">
-
-            <h2>
-                Mis logros
-            </h2>
-
-            <div class="estadistica">
-
-                <span>
-                    ⚡ XP acumulados
-                </span>
-
-                <strong>
-                    350 XP
-                </strong>
-
-            </div>
-
-            <div class="estadistica">
-
-                <span>
-                    🔥 Racha actual
-                </span>
-
-                <strong>
-                    5 días
-                </strong>
-
-            </div>
-
-            <div class="estadistica">
-
-                <span>
-                    🏆 Liga
-                </span>
-
-                <strong>
-                    Bronce
-                </strong>
-
-            </div>
-
-        </section>
-
-
+          <strong> Bronce </strong>
+        </div>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>

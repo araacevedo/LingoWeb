@@ -1,91 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clasificación Plata | LingoWeb</title>
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
-</head>
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
+  </head>
 
-<body>
+  <body>
+    <header class="barra-navegacion">
+      <nav aria-label="Navegación principal">
+        <a href="dashboard.html"> Cursos </a>
 
-    <header class="encabezado-principal">
+        <a href="perfil.html" class="activo"> Perfil </a>
 
-        <nav aria-label="Navegación principal">
-            <a href="dashboard.html">
-                Cursos
-            </a>
+        <a href="ranking.html"> Clasificación </a>
 
-            <a href="perfil.html" class="activo">
-                Perfil
-            </a>
+        <a href="tienda.html"> Tienda / Rachas </a>
 
-            <a href="ranking.html">
-                Clasificación
-            </a>
-
-            <a href="tienda.html">
-                Tienda / Rachas
-            </a>
-
-            <a href="login.html" class="enlace-salir">
-                Salir
-            </a>
-        </nav>
+        <a href="login.html" class="enlace-salir"> Salir </a>
+      </nav>
     </header>
 
     <main>
-        <section class="ranking">
-            <header class="ranking-header">
-                <h1>🏆 Tabla de Clasificación</h1>
+      <section class="ranking">
+        <header class="ranking-header">
+          <h1>🏆 Tabla de Clasificación</h1>
 
-                <nav class="selector-ligas" aria-label="Selector de Ligas">
-                    <a href="ranking.html" class="tab-liga">🥉 Liga Bronce</a>
-                    <a href="rankingPlata.html" class="tab-liga liga-activa">🥈 Liga Plata</a>
-                    <a href="rankingOro.html" class="tab-liga">🥇 Liga Oro</a>
-                </nav>
+          <nav class="selector-ligas" aria-label="Selector de Ligas">
+            <a href="ranking.html" class="tab-liga">🥉 Liga Bronce</a>
+            <a href="rankingPlata.html" class="tab-liga liga-activa"
+              >🥈 Liga Plata</a
+            >
+            <a href="rankingOro.html" class="tab-liga">🥇 Liga Oro</a>
+          </nav>
 
-                <p>Los 5 primeros ascienden a la Liga de Oro esta semana.</p>
-            </header>
+          <p>Los 5 primeros ascienden a la Liga de Oro esta semana.</p>
+        </header>
 
-            <div class="ranking-table-container">
-                <table class="tabla-clasificacion">
-                    <thead>
-                        <tr>
-                            <th>Puesto</th>
-                            <th>Estudiante</th>
-                            <th>XP Semanal</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>🥇 1</td>
-                            <td>Ana</td>
-                            <td>1450 XP</td>
-                            <td>Zona de Ascenso</td>
-                        </tr>
-                        <tr>
-                            <td>🥈 2</td>
-                            <td>Pedro</td>
-                            <td>1320 XP</td>
-                            <td>Zona de Ascenso</td>
-                        </tr>
-                        <tr class="usuario-actual">
-                            <td>🥉 3</td>
-                            <td>Juan <span>(Tú)</span></td>
-                            <td>1250 XP</td>
-                            <td>Zona de Ascenso</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        <div class="ranking-table-container">
+          <table class="tabla-clasificacion">
+            <thead>
+              <tr>
+                <th>Puesto</th>
+                <th>Estudiante</th>
+                <th>XP Semanal</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>🥇 1</td>
+                <td>Ana</td>
+                <td>1450 XP</td>
+                <td>Zona de Ascenso</td>
+              </tr>
+              <tr>
+                <td>🥈 2</td>
+                <td>Pedro</td>
+                <td>1320 XP</td>
+                <td>Zona de Ascenso</td>
+              </tr>
+              <tr class="usuario-actual">
+                <td>🥉 3</td>
+                <td>Juan <span>(Tú)</span></td>
+                <td>1250 XP</td>
+                <td>Zona de Ascenso</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>

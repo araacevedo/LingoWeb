@@ -1,156 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tienda y Rachas | LingoWeb</title>
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
-</head>
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
+  </head>
 
-<body>
+  <body>
+    <header class="barra-navegacion">
+      <a href="dashboard.html" class="logo"> LingoWeb </a>
+      <nav aria-label="Navegación principal">
+        <a href="dashboard.html"> Cursos </a>
 
-    <header class="encabezado-principal">
+        <a href="perfil.html"> Perfil </a>
 
-        <nav aria-label="Navegación principal">
+        <a href="ranking.html"> Clasificación </a>
 
-            <a href="dashboard.html">
-                Cursos
-            </a>
+        <a href="tienda.html" class="activo"> Tienda / Rachas </a>
 
-            <a href="perfil.html">
-                Perfil
-            </a>
-
-            <a href="ranking.html">
-                Clasificación
-            </a>
-
-            <a href="tienda.html" class="activo">
-                Tienda / Rachas
-            </a>
-
-            <a href="login.html" class="enlace-salir">
-                Salir
-            </a>
-
-        </nav>
-
+        <a href="login.html" class="enlace-salir"> Salir </a>
+      </nav>
     </header>
 
-
     <main class="contenedor-tienda">
+      <section class="cabecera-tienda">
+        <p class="etiqueta-seccion">RECOMPENSAS</p>
 
-        <section class="cabecera-tienda">
+        <h1>Tienda y Rachas</h1>
 
-            <p class="etiqueta-seccion">
-                RECOMPENSAS
-            </p>
+        <p>
+          Utiliza tus recompensas para mantener tu motivación y continuar
+          aprendiendo.
+        </p>
+      </section>
 
-            <h1>
-                Tienda y Rachas
-            </h1>
+      <section class="racha">
+        <h2>🔥 Tu racha</h2>
 
-            <p>
-                Utiliza tus recompensas para mantener tu motivación
-                y continuar aprendiendo.
-            </p>
+        <p>
+          Llevas
+          <strong>5 días</strong>
+          aprendiendo.
+        </p>
 
-        </section>
+        <p>¡Continúa para mantener tu racha!</p>
+      </section>
 
+      <section class="recompensas">
+        <h2>Recompensas</h2>
 
-        <section class="racha">
+        <article class="recompensa">
+          <div>🔥</div>
 
-            <h2>
-                🔥 Tu racha
-            </h2>
+          <h3>Protector de racha</h3>
 
-            <p>
-                Llevas
-                <strong>5 días</strong>
-                aprendiendo.
-            </p>
+          <p>Protege tu racha durante un día.</p>
 
-            <p>
-                ¡Continúa para mantener tu racha!
-            </p>
+          <strong> 100 XP </strong>
+        </article>
 
-        </section>
+        <article class="recompensa">
+          <div>⭐</div>
 
+          <h3>Bonificación de XP</h3>
 
-        <section class="recompensas">
+          <p>Obtén una bonificación de experiencia.</p>
 
-            <h2>
-                Recompensas
-            </h2>
+          <strong> 150 XP </strong>
+        </article>
 
+        <article class="recompensa">
+          <div>🎨</div>
 
-            <article class="recompensa">
+          <h3>Personalización de perfil</h3>
 
-                <div>
-                    🔥
-                </div>
+          <p>Personaliza la apariencia de tu perfil.</p>
 
-                <h3>
-                    Protector de racha
-                </h3>
-
-                <p>
-                    Protege tu racha durante un día.
-                </p>
-
-                <strong>
-                    100 XP
-                </strong>
-
-            </article>
-
-
-            <article class="recompensa">
-
-                <div>
-                    ⭐
-                </div>
-
-                <h3>
-                    Bonificación de XP
-                </h3>
-
-                <p>
-                    Obtén una bonificación de experiencia.
-                </p>
-
-                <strong>
-                    150 XP
-                </strong>
-
-            </article>
-
-
-            <article class="recompensa">
-
-                <div>
-                    🎨
-                </div>
-
-                <h3>
-                    Personalización de perfil
-                </h3>
-
-                <p>
-                    Personaliza la apariencia de tu perfil.
-                </p>
-
-                <strong>
-                    200 XP
-                </strong>
-
-            </article>
-
-        </section>
-
+          <strong> 200 XP </strong>
+        </article>
+      </section>
     </main>
-
-</body>
+  </body>
 </html>

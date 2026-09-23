@@ -1,48 +1,103 @@
 @media (max-width: 40rem) {
-    .marca {
-        flex-direction: column;
-        text-align: center;
-    }
+  .marca {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .encabezado {
-        padding: 1.5rem 1rem;
-    }
+  .encabezado {
+    padding: 1.5rem 1rem;
+  }
 
-    .tarjeta {
+  .tarjeta {
     padding: 1.25rem;
-    }
+  }
 
-    .barra-navegacion {
+  .barra-navegacion {
     flex-direction: column;
     padding: 0.75rem 1rem;
-    }
+  }
 
-    .dashboard {
+  .dashboard {
     padding: 0 1rem;
-    }
+  }
 
-    .dashboard .tarjeta-curso {
+  .dashboard .tarjeta-curso {
     flex-direction: column;
     align-items: stretch;
     padding: 1rem;
-    }
+  }
 
-    .dashboard .bandera {
+  .dashboard .bandera {
     text-align: center;
-    }
+  }
+
+  .ranking {
+    padding: 0 1rem;
+  }
+
+  .selector-ligas {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .ranking-table-container {
+    overflow-x: auto;
+  }
+
+  .contenedor-perfil {
+    padding: 0 1rem;
+  }
+
+  .acciones-perfil {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contenedor-tienda {
+    padding: 0 1rem;
+  }
+
+  .contenedor-tienda .recompensa {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contenedor-tienda .recompensa h3,
+  .contenedor-tienda .recompensa p {
+    flex: initial;
+  }
+
+  .mapa-curso,
+  .contenedor-curso {
+    padding: 0 1rem;
+  }
+
+  .unidad,
+  .mapa-lecciones,
+  .siguiente-unidad {
+    padding: 1rem;
+  }
+
+  .leccion {
+    flex-wrap: wrap;
+  }
+
+  .leccion .boton {
+    width: 100%;
+  }
 }
 
 @media (max-width: 60rem) {
-    .dashboard {
-        flex-direction: column;
-    }
+  .dashboard {
+    flex-direction: column;
+  }
 
-    .dashboard .cursos,
-    .dashboard .estadisticas {
-        width: 100%;
-    }
+  .dashboard .cursos,
+  .dashboard .estadisticas {
+    width: 100%;
+  }
 
-    .dashboard .estadisticas {
-        flex: initial;
-    }
+  .dashboard .estadisticas {
+    flex: initial;
+  }
 }

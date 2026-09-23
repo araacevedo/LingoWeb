@@ -82,7 +82,7 @@ a {
     font-weight: bold;
 }
 
-.campo input {
+.campo input, .campo select {
     width: 100%;
     min-width: 0;
     padding: 0.75rem;
@@ -248,4 +248,228 @@ a {
 .dashboard .barra-progreso::-webkit-progress-value {
     background-color: #4f46e5;
     border-radius: 1rem;
+}
+
+/* Ranking */
+
+.ranking {
+    width: 100%;
+    max-width: 65rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.selector-ligas {
+    margin: 1.5rem 0;
+    border-bottom: 0.125rem solid #dce1eb;
+}
+
+.tab-liga {
+    padding: 0.5rem 1rem;
+    color: #596579;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 0.1875rem solid transparent;
+}
+
+.tab-liga:hover,
+.tab-liga.liga-activa {
+    color: #4f46e5;
+}
+
+.tab-liga.liga-activa {
+    border-bottom-color: #4f46e5;
+}
+
+.tabla-clasificacion {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tabla-clasificacion th,
+.tabla-clasificacion td {
+    padding: 1rem;
+    border-bottom: 0.0625rem solid #dce1eb;
+    text-align: left;
+}
+
+.tabla-clasificacion th {
+    background-color: #243047;
+    color: white;
+}
+
+.tabla-clasificacion .usuario-actual {
+    background-color: #eeecff;
+    font-weight: bold;
+}
+
+/* Perfil */
+
+.contenedor-perfil {
+    width: 100%;
+    max-width: 40rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.cabecera-perfil {
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.cabecera-perfil h1,
+.cabecera-perfil p {
+    margin: 0;
+}
+
+.contenedor-perfil .avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #4f46e5;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.contenedor-perfil .ajustes,
+.contenedor-perfil .logros {
+    padding: 1.5rem;
+    background-color: white;
+    border: 0.0625rem solid #dce1eb;
+    border-radius: 1rem;
+}
+
+.contenedor-perfil h2 {
+    margin-top: 0;
+}
+
+.boton-secundario {
+    background-color: #eeecff;
+    color: #3730a3;
+}
+
+.boton-secundario:hover {
+    background-color: #dedaff;
+}
+
+/* Tienda y rachas */
+
+.contenedor-tienda {
+    width: 100%;
+    max-width: 50rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.cabecera-tienda .etiqueta-seccion {
+    color: #4f46e5;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.contenedor-tienda .racha,
+.contenedor-tienda .recompensas {
+    padding: 1.5rem;
+    background-color: white;
+    border: 0.0625rem solid #dce1eb;
+    border-radius: 1rem;
+}
+
+.contenedor-tienda h2 {
+    margin: 0 0 1rem;
+}
+
+.contenedor-tienda .recompensa {
+    padding: 1rem;
+    border: 0.0625rem solid #dce1eb;
+    border-radius: 0.75rem;
+    background-color: #f8fafc;
+}
+
+.contenedor-tienda .recompensa h3,
+.contenedor-tienda .recompensa p {
+    margin: 0;
+}
+
+.contenedor-tienda .recompensa p {
+    color: #596579;
+}
+
+.contenedor-tienda .recompensa > div {
+    font-size: 1.75rem;
+}
+
+.contenedor-tienda .recompensa strong {
+    color: #4f46e5;
+    white-space: nowrap;
+}
+
+/* Mapas de cursos */
+
+.mapa-curso,
+.contenedor-curso {
+    width: 100%;
+    max-width: 50rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.cabecera-curso h1 {
+    margin: 0.5rem 0;
+}
+
+.cabecera-curso .etiqueta-seccion {
+    color: #4f46e5;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.unidad,
+.mapa-lecciones,
+.siguiente-unidad {
+    padding: 1.5rem;
+    background-color: white;
+    border: 0.0625rem solid #dce1eb;
+    border-radius: 1rem;
+}
+
+.unidad h2,
+.mapa-lecciones h2 {
+    margin-top: 0;
+}
+
+.leccion {
+    padding: 1rem;
+    border: 0.0625rem solid #dce1eb;
+    border-radius: 0.75rem;
+    background-color: #f8fafc;
+}
+
+.leccion h3 {
+    margin: 0 0 0.5rem;
+}
+
+.leccion p {
+    margin: 0;
+}
+
+.leccion.completada {
+    border-left: 0.35rem solid #15803d;
+}
+
+.leccion.en-progreso {
+    border-left: 0.35rem solid #ca8a04;
+    background-color: #fffbea;
+}
+
+.leccion.bloqueada {
+    border-left: 0.35rem solid #64748b;
+    background-color: #eef1f5;
+}
+
+.leccion .estado,
+.leccion .icono-leccion {
+    font-size: 1.5rem;
 }
