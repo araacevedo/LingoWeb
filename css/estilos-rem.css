@@ -539,3 +539,28 @@ a {
 .acciones-ejercicio {
   margin-top: 2rem;
 }
+
+/* Banco de palabras */
+
+.banco-palabras {
+  margin-top: 1.5rem;
+}
+
+.lista-palabras {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.lista-palabras .boton {
+  background-color: white;
+  color: #243047;
+  border: 0.0625rem solid #aab3c2;
+  border-bottom: 0.25rem solid #aab3c2;
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
+}
+
+.lista-palabras .boton:hover {
+  background-color: #f1f5f9;
+}
