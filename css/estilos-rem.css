@@ -635,3 +635,24 @@ a {
   border-color: #b91c1c;
   background-color: #fef2f2;
 }
+
+.menu-toggle {
+  display: none;
+}
+
+.boton-hamburguesa {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.75rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.boton-hamburguesa span {
+  display: block;
+  height: 0.1875rem;
+  width: 100%;
+  background-color: #243047;
+  border-radius: 0.125rem;
+}
