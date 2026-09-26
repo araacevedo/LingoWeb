@@ -73,12 +73,47 @@
 
             <footer class="acciones-ejercicio"><!--Ponemos el footer dentro del main porque representa el pie de pagina del contenido ligado al area principal del ejercicio, no de toda la pagina-->
 
-                <button type="button">
-                    Comprobar Respuesta
-                </button>
+                <a href="#resultado-correcto" class="boton boton-principal">
+                    Comprobar respuesta
+                </a>
 
             </footer>
 
+            <p>Demostración con una respuesta correcta precargada.</p>
+
+            <a href="#resultado-incorrecto">
+                Ver ejemplo de respuesta incorrecta
+            </a>
+
+        </section>
+
+        <section id="resultado-correcto" class="resultado resultado-correcto">
+            <h2>✓ Respuesta correcta</h2>
+            <p>
+                "Guten Tag, wie geht es dir?" significa "Buenos días, ¿cómo estás?".
+            </p>
+
+            <a href="#finalizacion" class="boton boton-principal">
+                Finalizar demostración
+            </a>
+        </section>
+
+        <section id="resultado-incorrecto" class="resultado resultado-incorrecto">
+            <h2>✕ Respuesta incorrecta</h2>
+            <p>La traducción esperada es "Buenos días, ¿cómo estás?".</p>
+
+            <a href="#ejercicio" class="boton boton-secundario">
+                Volver al ejercicio
+            </a>
+        </section>
+
+        <section id="finalizacion" class="resultado">
+            <h2>Demostración finalizada</h2>
+            <p>Terminaste este ejercicio de ejemplo.</p>
+
+            <a href="dashboard.html" class="boton boton-principal">
+                Volver al curso
+            </a>
         </section>
         
     </main>
