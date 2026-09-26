@@ -1,78 +1,88 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alemán | LingoWeb</title>
-    <link rel="stylesheet" href="css/estilos-rem.css" />
-    <link rel="stylesheet" href="css/estilos-flex.css" />
-    <link rel="stylesheet" href="css/estilos-responsive.css" />
-  </head>
 
-  <body>
-    <header class="barra-navegacion">
-      <a href="dashboard.html" class="logo">LingoWeb</a>
-      <nav aria-label="Navegación principal">
-        <a href="dashboard.html" class="activo"> Cursos </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alemán | LingoWeb</title>
+  <link rel="stylesheet" href="css/estilos-rem.css" />
+  <link rel="stylesheet" href="css/estilos-flex.css" />
+  <link rel="stylesheet" href="css/estilos-responsive.css" />
+</head>
 
-        <a href="perfil.html"> Perfil </a>
+<body>
+  <header class="barra-navegacion">
+    <a href="dashboard.html" class="logo">LingoWeb</a>
+    <nav aria-label="Navegación principal">
+      <a href="dashboard.html" class="activo"> Cursos </a>
 
-        <a href="ranking.html"> Clasificación </a>
+      <a href="perfil.html"> Perfil </a>
 
-        <a href="tienda.html"> Tienda / Rachas </a>
+      <a href="ranking.html"> Clasificación </a>
 
-        <a href="login.html" class="enlace-salir"> Salir </a>
-      </nav>
-    </header>
+      <a href="tienda.html"> Tienda / Rachas </a>
 
-    <main class="contenedor-curso">
-      <section class="cabecera-curso">
-        <a href="dashboard.html"> ← Volver a Cursos </a>
+      <a href="login.html" class="enlace-salir"> Salir </a>
+    </nav>
+  </header>
 
-        <p class="etiqueta-seccion">CURSO</p>
+  <main class="contenedor-curso">
+    <section class="cabecera-curso">
+      <a href="dashboard.html"> ← Volver a Cursos </a>
 
-        <h1>Alemán desde Español</h1>
+      <p class="etiqueta-seccion">CURSO</p>
 
-        <p>Unidad 1: Introducción y Saludos</p>
-      </section>
+      <h1>Alemán desde Español</h1>
 
-      <section class="mapa-lecciones">
-        <h2>Unidad 1: Introducción y Saludos</h2>
+      <p>Unidad 1: Introducción y Saludos</p>
+    </section>
 
-        <article class="leccion completada">
-          <div class="icono-leccion">🟢</div>
+    <section class="mapa-lecciones">
+      <h2>Unidad 1: Introducción y Saludos</h2>
 
-          <div>
-            <h3>Lección 1 — Frases Básicas</h3>
+      <article class="leccion completada">
+        <div class="icono-leccion">🟢</div>
+        <div>
+          <h3>Lección 1 — Frases Básicas</h3>
+          <p>Completado (100%)</p>
+          <progress class="barra-progreso" value="100" max="100" aria-label="Progreso lección 1">100%</progress>
+        </div>
+        <a href="leccionAleman.html" class="boton boton-secundario">Repasar</a>
+      </article>
 
-            <p>Completado</p>
-          </div>
-        </article>
+      <article class="leccion en-progreso">
+        <div class="icono-leccion">🟡</div>
+        <div>
+          <h3>Lección 2 — Presentaciones</h3>
+          <p>Avance: 40%</p>
+          <progress class="barra-progreso" value="40" max="100" aria-label="Progreso lección 2">40%</progress>
+        </div>
+        <a href="leccionAleman.html" class="boton boton-principal">Continuar</a>
+      </article>
 
-        <article class="leccion en-progreso">
-          <div class="icono-leccion">🟡</div>
+      <article class="leccion bloqueada">
+        <div class="icono-leccion">🔒</div>
+        <div>
+          <h3>Lección 3 — Vocabulario de Familia</h3>
+          <p>Bloqueado</p>
+        </div>
+      </article>
+    </section>
 
-          <div>
-            <h3>Lección 2 — Presentaciones</h3>
+     <section class="siguiente-unidad">
 
-            <p>En Curso</p>
-          </div>
+            <h2>
+                Próximamente
+            </h2>
 
-          <a href="leccionAleman.html" class="boton boton-principal">
-            Iniciar
-          </a>
-        </article>
+            <p>
+                Completa las lecciones disponibles para desbloquear
+                nuevas unidades.
+            </p>
 
-        <article class="leccion bloqueada">
-          <div class="icono-leccion">🔒</div>
+        </section>
 
-          <div>
-            <h3>Lección 3 — Vocabulario de Familia</h3>
+  </main>
+</body>
 
-            <p>Bloqueado</p>
-          </div>
-        </article>
-      </section>
-    </main>
-  </body>
 </html>
