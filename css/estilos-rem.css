@@ -523,6 +523,50 @@ a {
   font-size: 1.25rem;
 }
 
+.boton-eliminar-curso {
+  padding: 0.55rem 0.75rem;
+  border: 0.0625rem solid #c2414b;
+  border-radius: 0.6rem;
+  background-color: white;
+  color: #a12f38;
+  font: inherit;
+  cursor: pointer;
+}
+
+.boton-eliminar-curso:hover {
+  background-color: #fff1f2;
+}
+
+.boton-eliminar-curso:focus-visible {
+  outline: 0.18rem solid #c2414b;
+  outline-offset: 0.15rem;
+}
+
+.boton-audio {
+  margin: 0.25rem 0 1rem;
+  padding: 0.55rem 0.9rem;
+  border: 0.0625rem solid #4f46e5;
+  border-radius: 0.6rem;
+  background: white;
+  color: #3730a3;
+  font: inherit;
+  cursor: pointer;
+}
+
+.boton-audio:hover {
+  background: #eeecff;
+}
+
+.boton-audio:focus-visible {
+  outline: 0.18rem solid #4f46e5;
+  outline-offset: 0.15rem;
+}
+
+.boton-audio:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
 .respuesta {
   min-height: 4rem;
   padding: 1rem;
