@@ -1,74 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recuperar contraseña | LingoWeb</title>
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
-</head>
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="encabezado">
+      <div class="marca">
+        <div class="imagotipo">LW</div>
 
-        <div class="marca">
-
-            <div class="imagotipo">
-                LW
-            </div>
-
-            <div>
-                <h1>LingoWeb</h1>
-                <p>Aprende idiomas de forma divertida</p>
-            </div>
-
+        <div>
+          <h1>LingoWeb</h1>
+          <p>Aprende idiomas de forma divertida</p>
         </div>
-
+      </div>
     </header>
 
-
     <main class="contenedor">
+      <section class="tarjeta">
+        <h2>Recuperar contraseña</h2>
 
-        <section class="tarjeta">
+        <p class="texto-bienvenida">
+          Ingresa tu correo electrónico para solicitar instrucciones de
+          recuperación.
+        </p>
 
-            <h2>Recuperar contraseña</h2>
+        <form action="#exito-recuperar" method="get">
+          <div class="campo">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ingresa tu email"
+              required
+            />
+          </div>
 
-            <p class="texto-bienvenida">
-                Ingresa tu correo electrónico para solicitar instrucciones de recuperación.
-            </p>
+          <button type="submit" class="boton boton-principal">
+            Enviar instrucciones
+          </button>
+        </form>
 
-            <form action="#exito-recuperar" method="get">
-                <div class="campo">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
-                </div>
+        <div id="exito-recuperar" class="resultado resultado-correcto">
+          <h3>✓ ¡Instrucciones enviadas!</h3>
+          <p>Revisa tu bandeja de entrada para restablecer tu contraseña.</p>
+        </div>
 
-                <button type="submit" class="boton boton-principal">
-                    Enviar instrucciones
-                </button>
-            </form>
-
-            <div id="exito-recuperar" class="resultado resultado-correcto">
-                <h3>✓ ¡Instrucciones enviadas!</h3>
-                <p>Revisa tu bandeja de entrada para restablecer tu contraseña.</p>
-            </div>
-
-
-            <p class="enlace-secundario">
-
-                <a href="login.html">
-                    Volver al inicio de sesión
-                </a>
-
-            </p>
-
-        </section>
-
+        <p class="enlace-secundario">
+          <a href="login.html"> Volver al inicio de sesión </a>
+        </p>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>

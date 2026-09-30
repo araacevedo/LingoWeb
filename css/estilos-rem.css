@@ -224,7 +224,7 @@ a {
   margin: 0 0 1.5rem;
 }
 
-.dashboard .estadistica+.estadistica {
+.dashboard .estadistica + .estadistica {
   margin-top: 1.25rem;
 }
 
@@ -399,7 +399,7 @@ a {
   color: #596579;
 }
 
-.contenedor-tienda .recompensa>div {
+.contenedor-tienda .recompensa > div {
   font-size: 1.75rem;
 }
 
@@ -486,7 +486,7 @@ a {
   padding: 0 1.5rem;
 }
 
-.encabezado-leccion>a {
+.encabezado-leccion > a {
   padding: 0.5rem;
   font-size: 1.5rem;
   text-decoration: none;
@@ -670,4 +670,11 @@ a {
   width: 100%;
   background-color: #243047;
   border-radius: 0.125rem;
+}
+
+.audio-frase {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  margin: 1rem 0;
 }

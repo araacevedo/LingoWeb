@@ -33,8 +33,15 @@
           <h1>Traduce la siguiente oración:</h1>
 
           <p class="frase">"Good morning, how are you?"</p>
-          <button type="button" class="boton-audio" aria-label="Escuchar la frase en inglés">🔊 Escuchar</button>
-
+          <audio
+            class="audio-frase"
+            controls
+            preload="none"
+            aria-label="Escuchar la frase en inglés"
+          >
+            <source src="audio/leccion-ingles.mp3" type="audio/mpeg" />
+            Tu navegador no admite audio.
+          </audio>
           <div class="respuesta">[ Buenos ] [ días ] [ ¿cómo ] [ estás? ]</div>
 
           <hr />

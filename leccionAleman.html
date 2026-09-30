@@ -1,123 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lección | LingoWeb</title>
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
-</head>
+    <link rel="stylesheet" href="css/estilos-rem.css" />
+    <link rel="stylesheet" href="css/estilos-flex.css" />
+    <link rel="stylesheet" href="css/estilos-responsive.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="encabezado-leccion">
+      <a href="cursoAleman.html" aria-label="Salir de la lección"> ✕ </a>
 
-        <a href="cursoAleman.html" aria-label="Salir de la lección">
-            ✕
-        </a>
+      <div class="progreso-leccion">
+        <span>Lección 2 (40%)</span>
+        <progress
+          class="barra-progreso"
+          value="40"
+          max="100"
+          aria-label="Progreso de la lección"
+        >
+          40%
+        </progress>
+      </div>
 
-        <div class="progreso-leccion">
-            <span>Lección 2 (40%)</span>
-            <progress class="barra-progreso" value="40" max="100" aria-label="Progreso de la lección">40%</progress>
-        </div>
-
-        <div class="vidas" aria-label="Vidas restantes">
-            ❤️❤️❤️
-        </div>
-
+      <div class="vidas" aria-label="Vidas restantes">❤️❤️❤️</div>
     </header>
 
-
     <main class="contenedor-leccion">
+      <section class="ejercicio" id="ejercicio">
+        <div class="contenido-ejercicio">
+          <p class="etiqueta-seccion">ALEMÁN</p>
 
-        <section class="ejercicio" id="ejercicio">
-            <div class="contenido-ejercicio">
+          <h1>Traduce la siguiente oración:</h1>
 
-                <p class="etiqueta-seccion">
-                    ALEMÁN
-                </p>
+          <p class="frase">"Guten Tag, wie geht es dir?"</p>
+          <audio
+            class="audio-frase"
+            controls
+            preload="none"
+            aria-label="Escuchar la frase en alemán"
+          >
+            <source src="audio/leccion-aleman.mp3" type="audio/mpeg" />
+            Tu navegador no admite audio.
+          </audio>
 
-                <h1>
-                    Traduce la siguiente oración:
-                </h1>
+          <div class="respuesta">[ Buenos ] [ días ] [ ¿cómo ] [ estás? ]</div>
 
-                <p class="frase">
-                    "Guten Tag, wie geht es dir?"
-                </p>
-                <button type="button" class="boton-audio" aria-label="Escuchar la frase en alemán">🔊 Escuchar</button>
+          <hr />
 
-                <div class="respuesta">
-                    [ Buenos ] [ días ] [ ¿cómo ] [ estás? ]
-                </div>
+          <div class="banco-palabras">
+            <p>Banco de palabras disponibles:</p>
+            <ul class="lista-palabras">
+              <li><button type="button" class="boton">Hola</button></li>
+              <li><button type="button" class="boton">días</button></li>
+              <li><button type="button" class="boton">estás?</button></li>
+              <li><button type="button" class="boton">Gracias</button></li>
+              <li><button type="button" class="boton">¿cómo</button></li>
+              <li><button type="button" class="boton">Buenos</button></li>
+              <li><button type="button" class="boton">Adiós</button></li>
+            </ul>
+          </div>
+        </div>
 
-                <hr>
+        <footer class="acciones-ejercicio">
+          <!--Ponemos el footer dentro del main porque representa el pie de pagina del contenido ligado al area principal del ejercicio, no de toda la pagina-->
 
-                <div class="banco-palabras">
-                    <p>Banco de palabras disponibles:</p>
-                    <ul class="lista-palabras">
-                        <li><button type="button" class="boton">Hola</button></li>
-                        <li><button type="button" class="boton">días</button></li>
-                        <li><button type="button" class="boton">estás?</button></li>
-                        <li><button type="button" class="boton">Gracias</button></li>
-                        <li><button type="button" class="boton">¿cómo</button></li>
-                        <li><button type="button" class="boton">Buenos</button></li>
-                        <li><button type="button" class="boton">Adiós</button></li>
-                    </ul>
-                </div>
+          <a href="#resultado-correcto" class="boton boton-principal">
+            Comprobar respuesta
+          </a>
+        </footer>
 
-            </div>
+        <p>Demostración con una respuesta correcta precargada.</p>
 
+        <a href="#resultado-incorrecto">
+          Ver ejemplo de respuesta incorrecta
+        </a>
+      </section>
 
-            <footer class="acciones-ejercicio">
-                <!--Ponemos el footer dentro del main porque representa el pie de pagina del contenido ligado al area principal del ejercicio, no de toda la pagina-->
+      <section id="resultado-correcto" class="resultado resultado-correcto">
+        <h2>✓ Respuesta correcta</h2>
+        <p>
+          "Guten Tag, wie geht es dir?" significa "Buenos días, ¿cómo estás?".
+        </p>
 
-                <a href="#resultado-correcto" class="boton boton-principal">
-                    Comprobar respuesta
-                </a>
+        <a href="#finalizacion" class="boton boton-principal">
+          Finalizar demostración
+        </a>
+      </section>
 
-            </footer>
+      <section id="resultado-incorrecto" class="resultado resultado-incorrecto">
+        <h2>✕ Respuesta incorrecta</h2>
+        <p>La traducción esperada es "Buenos días, ¿cómo estás?".</p>
 
-            <p>Demostración con una respuesta correcta precargada.</p>
+        <a href="#ejercicio" class="boton boton-secundario">
+          Volver al ejercicio
+        </a>
+      </section>
 
-            <a href="#resultado-incorrecto">
-                Ver ejemplo de respuesta incorrecta
-            </a>
+      <section id="finalizacion" class="resultado">
+        <h2>Demostración finalizada</h2>
+        <p>Terminaste este ejercicio de ejemplo.</p>
 
-        </section>
-
-        <section id="resultado-correcto" class="resultado resultado-correcto">
-            <h2>✓ Respuesta correcta</h2>
-            <p>
-                "Guten Tag, wie geht es dir?" significa "Buenos días, ¿cómo estás?".
-            </p>
-
-            <a href="#finalizacion" class="boton boton-principal">
-                Finalizar demostración
-            </a>
-        </section>
-
-        <section id="resultado-incorrecto" class="resultado resultado-incorrecto">
-            <h2>✕ Respuesta incorrecta</h2>
-            <p>La traducción esperada es "Buenos días, ¿cómo estás?".</p>
-
-            <a href="#ejercicio" class="boton boton-secundario">
-                Volver al ejercicio
-            </a>
-        </section>
-
-        <section id="finalizacion" class="resultado">
-            <h2>Demostración finalizada</h2>
-            <p>Terminaste este ejercicio de ejemplo.</p>
-
-            <a href="cursoAleman.html" class="boton boton-principal">
-                Volver al curso
-            </a>
-        </section>
-
+        <a href="cursoAleman.html" class="boton boton-principal">
+          Volver al curso
+        </a>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>
