@@ -134,9 +134,12 @@ a {
 }
 
 .barra-navegacion {
-  position: sticky; /* permito que se pegue al hacer scroll */
-  top: 0; /* se pega al borde superior */
-  z-index: 10; /* queda por encima del contenido */
+  position: sticky;
+  /* permito que se pegue al hacer scroll */
+  top: 0;
+  /* se pega al borde superior */
+  z-index: 10;
+  /* queda por encima del contenido */
   padding: 1rem 1.5rem;
   background-color: white;
   border-bottom: 0.0625rem solid #dce1eb;
@@ -221,7 +224,7 @@ a {
   margin: 0 0 1.5rem;
 }
 
-.dashboard .estadistica + .estadistica {
+.dashboard .estadistica+.estadistica {
   margin-top: 1.25rem;
 }
 
@@ -396,7 +399,7 @@ a {
   color: #596579;
 }
 
-.contenedor-tienda .recompensa > div {
+.contenedor-tienda .recompensa>div {
   font-size: 1.75rem;
 }
 
@@ -483,7 +486,7 @@ a {
   padding: 0 1.5rem;
 }
 
-.encabezado-leccion > a {
+.encabezado-leccion>a {
   padding: 0.5rem;
   font-size: 1.5rem;
   text-decoration: none;
@@ -527,13 +530,15 @@ a {
 .checkbox-eliminar-curso {
   display: none;
 }
- 
+
 /* Si el checkbox de la tarjeta está marcado, se oculta toda la tarjeta del curso */
 .tarjeta-curso:has(.checkbox-eliminar-curso:checked) {
   display: none;
 }
 
 .boton-eliminar-curso {
+  display: block;
+  text-align: center;
   padding: 0.55rem 0.75rem;
   border: 0.0625rem solid #c2414b;
   border-radius: 0.6rem;
