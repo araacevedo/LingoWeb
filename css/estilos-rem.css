@@ -523,6 +523,16 @@ a {
   font-size: 1.25rem;
 }
 
+/* Truco visual de eliminar curso: el checkbox queda oculto, la etiqueta (label) hace de botón */
+.checkbox-eliminar-curso {
+  display: none;
+}
+ 
+/* Si el checkbox de la tarjeta está marcado, se oculta toda la tarjeta del curso */
+.tarjeta-curso:has(.checkbox-eliminar-curso:checked) {
+  display: none;
+}
+
 .boton-eliminar-curso {
   padding: 0.55rem 0.75rem;
   border: 0.0625rem solid #c2414b;
