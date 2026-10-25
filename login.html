@@ -7,9 +7,12 @@
 
     <title>LingoWeb - Iniciar sesión</title>
 
-    <link rel="stylesheet" href="css/estilos-rem.css">
-    <link rel="stylesheet" href="css/estilos-flex.css">
-    <link rel="stylesheet" href="css/estilos-responsive.css">
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/forms-buttons.css" />
+    <link rel="stylesheet" href="css/footer.css" />
 </head>
 
 <body>
@@ -49,7 +52,8 @@
                         Usuario:
                     </label>
 
-                    <input type="text" id="usuario" placeholder="Ingresa tu usuario" required><!--input type representa el tipo de campo de entrada y placeholder representa el texto de ayuda-->
+                    <input type="text" id="usuario" placeholder="Ingresa tu usuario"
+                        required><!--input type representa el tipo de campo de entrada y placeholder representa el texto de ayuda-->
 
                 </div>
 
@@ -60,7 +64,8 @@
                         Contraseña:
                     </label>
 
-                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required><!--Required nos indica que no debe enviarse vacío-->
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña"
+                        required><!--Required nos indica que no debe enviarse vacío-->
 
                 </div>
 
@@ -74,6 +79,12 @@
                 </button>
 
             </form>
+
+            <div id="error-login" class="resultado resultado-incorrecto">
+                <h2>✕ Error de autenticación</h2>
+                <p>El usuario o la contraseña ingresados son incorrectos. Por favor, verifica tus datos.</p>
+            </div>
+            <p class="enlace-secundario"><a href="#error-login">Simular credenciales incorrectas</a></p>
 
 
             <div class="registro">
