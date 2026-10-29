@@ -152,7 +152,6 @@
 
 /* Funcionalidad CSS puro: Alertas de Validación */
 .resultado {
-    display: none;
     margin-top: 1.5rem;
     padding: 1.5rem;
     border: 0.125rem solid #dce1eb;
