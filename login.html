@@ -42,17 +42,16 @@
                 Continúa tu aprendizaje de idiomas
             </p>
 
-
-            <form id="form-login">
+            <form id="form-login" novalidate> <!-- TP2: novalidate -->
             
             <div class="campo">
               <label for="identificador">Usuario / Email:</label>
-              <input type="text" id="identificador" placeholder="Ingresa tu usuario o email" required />
+              <input type="text" id="identificador" autocomplete="username" placeholder="Ingresa tu usuario o email" required />
             </div>
 
             <div class="campo">
-              <label for="password">Contraseña:</label>
-              <input type="password" id="password" placeholder="Ingresa tu contraseña" required />
+              <label for="contraseña">Contraseña:</label>
+              <input type="password" id="contraseña" autocomplete="current-password" placeholder="Ingresa tu contraseña" required />
             </div>
 
             <p class="enlace-olvido">
@@ -65,7 +64,7 @@
 
           </form>
 
-          <div id="mensaje-login" class="resultado oculto" role="alert"></div>
+          <div id="mensaje-login" class="resultado oculto" role="alert"></div> <!-- TP2: contenedor que llena presentacion/ui.js; role="alert" hace que el lector de pantalla lea el mensaje -->
 
           <div class="registro">
             <p>
@@ -73,16 +72,17 @@
             </p>
           </div>
 
+          <!-- TP2: datos de las cuentas definidas en js/datos/usuarios.js -->
+          <p class="texto-bienvenida">Cuentas de demostración: pedro / demo123 · ana / demo123</p>
+
         </section>
 
     </main>
 
-    <script src="./js/datos.js"></script>
-    <script src="./js/storage.js"></script>
-    <script src="./js/calculos.js"></script>
-    <script src="./js/ui.js"></script>
-    <script src="./js/sesion.js"></script>
-    <script src="./js/auth.js"></script>
+    <!-- TP2: cargamos UN solo módulo, el controlador de esta vista. type="module" habilita import/export:
+       el navegador descarga solo los archivos que ese controlador importa (y los que importan ellos),
+       en el orden correcto. Los módulos se ejecutan cuando el HTML terminó de cargarse. -->
+  <script type="module" src="./js/presentacion/login.js"></script>
 
 </body>
 
