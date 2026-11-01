@@ -29,7 +29,7 @@ js/
 ├── datos/              ← QUÉ información existe y DÓNDE se guarda
 │   ├── usuarios.js         forma de una cuenta (crearUsuario), cuentas y opiniones de demostración
 │   ├── almacenamiento.js   único archivo que usa localStorage (usuarios, sesión y opiniones)
-│   └── cursos.js           los 3 cursos con sus unidades y lecciones; buscarCurso(id)
+│   └── catalogo.js           los 3 cursos con sus unidades y lecciones; buscarCurso(id)
 ├── logica/             ← REGLAS: valida, calcula y decide; nunca toca la pantalla
 │   ├── validaciones.js     revisa los datos de los formularios
 │   ├── autenticacion.js    iniciar sesión, registrarse, recuperar acceso, cerrar sesión, cuenta activa
