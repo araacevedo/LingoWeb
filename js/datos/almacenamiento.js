@@ -80,3 +80,26 @@ export const guardarIdSesion = (id) => {                           // recibe el 
 export const borrarSesion = () => {                                // se usa al cerrar sesión
   localStorage.removeItem(CLAVES.sesion);                          // removeItem borra SOLO la clave de sesión; las cuentas y su progreso siguen guardados
 };                                                                 
+
+// --- Opiniones (vista 3) -----------------------------------------------------
+ 
+// Devuelve todas las opiniones de todos los cursos.
+export const obtenerOpiniones = () => {
+  // Pedimos la lista; null significa que nunca se guardó nada
+  const opiniones = leerDato(CLAVES.opiniones, null);
+  // Primera visita: guardamos las opiniones de demostración y las devolvemos
+  if (opiniones === null) {
+    guardarDato(CLAVES.opiniones, OPINIONES_DEMO);
+    return leerDato(CLAVES.opiniones, []);
+  }
+  // Si ya había opiniones guardadas, las devolvemos tal cual
+  return opiniones;
+};
+ 
+// Agrega una opinión nueva a la lista guardada.
+export const agregarOpinion = (opinion) => {
+  // Sacamos la lista, le agregamos la opinión al final y la volvemos a guardar
+  const opiniones = obtenerOpiniones();
+  opiniones.push(opinion);
+  guardarDato(CLAVES.opiniones, opiniones);
+};

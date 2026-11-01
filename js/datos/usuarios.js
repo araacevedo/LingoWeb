@@ -37,9 +37,14 @@ export const USUARIOS_DEMO = [    // array (lista) de objetos: cada objeto es un
     metaDiaria: 50,               
     liga: "Bronce",               
     idiomaInterfaz: "es",         
-    progreso: {                   // lecciones que ya terminó en cada curso (el dashboard calcula el porcentaje con esto)
-      ingles: ["l1", "l2"],       // terminó 2 de las 3 lecciones de inglés
-      aleman: ["l1"]              // terminó 1 lección de alemán; chino no aparece porque todavía no lo empezó
+    progreso: {                   // por cada curso, las lecciones que terminó y el resultado que obtuvo en cada una
+      ingles: {                   // inglés: terminó 2 de 4 lecciones (50%)
+        l1: { xp: 40, errores: 1, fecha: "12/03/2026" },   // xp = experiencia ganada, errores = respuestas incorrectas, fecha = cuándo la terminó
+        l2: { xp: 50, errores: 0, fecha: "14/03/2026" }
+      },
+      aleman: {                   // alemán: terminó 1 de 4 lecciones (25%); chino no aparece porque todavía no lo empezó
+        l1: { xp: 30, errores: 2, fecha: "02/04/2026" }
+      }
     }                  
   },                              
   {                               // --- segunda cuenta demo: ana / demo123, con datos DISTINTOS para comprobar que no se mezclan ---
@@ -54,10 +59,30 @@ export const USUARIOS_DEMO = [    // array (lista) de objetos: cada objeto es un
     metaDiaria: 80,               
     liga: "Plata",                // otra liga (permite probar el selector de la vista 6)
     idiomaInterfaz: "es",         
-    progreso: {                   // lecciones que ya terminó en cada curso
-      ingles: ["l1", "l2", "l3"], // terminó todo el curso de inglés
-      aleman: ["l1", "l2"],       // terminó 2 lecciones de alemán
-      chino: ["l1"]               // terminó 1 lección de chino
-    }                  // progreso por curso, a definir en la vista 2/3
+    progreso: {                   // por cada curso, las lecciones que terminó y su resultado
+      ingles: {                   // inglés: terminó las 4 lecciones (100%)
+        l1: { xp: 50, errores: 0, fecha: "22/06/2026" },
+        l2: { xp: 40, errores: 1, fecha: "24/06/2026" },
+        l3: { xp: 50, errores: 0, fecha: "01/07/2026" },
+        l4: { xp: 50, errores: 0, fecha: "03/07/2026" }
+      },
+      aleman: {                   // alemán: terminó 3 de 4 lecciones (75%)
+        l1: { xp: 50, errores: 0, fecha: "01/08/2026" },
+        l2: { xp: 40, errores: 1, fecha: "04/08/2026" },
+        l3: { xp: 30, errores: 2, fecha: "06/08/2026" }
+      },
+      chino: {                    // chino: terminó 1 de 4 lecciones (25%)
+        l1: { xp: 30, errores: 2, fecha: "10/09/2026" }
+      }
+    }                  // progreso por curso, a definir en la vista 2/3                  // progreso por curso, a definir en la vista 2/3
   }                               
 ];                                
+
+// Opiniones de demostración: así la sección de opiniones del mapa del curso no arranca vacía.
+// Cada opinión queda asociada a un curso (cursoId) y a quien la publicó (usuarioId).
+// Se cargan la primera vez que se abre el sitio, igual que las cuentas (ver datos/almacenamiento.js).
+export const OPINIONES_DEMO = [
+  { id: "o-1", cursoId: "ingles", usuarioId: "u-pedro", estrellas: 5, comentario: "Muy claro y entretenido, ideal para empezar.", fecha: "15/03/2026" },
+  { id: "o-2", cursoId: "ingles", usuarioId: "u-ana", estrellas: 4, comentario: "Me sirvió mucho para los saludos. Ojalá sumen más unidades.", fecha: "05/07/2026" },
+  { id: "o-3", cursoId: "aleman", usuarioId: "u-ana", estrellas: 5, comentario: "Las frases de ejemplo ayudan a practicar la pronunciación.", fecha: "07/08/2026" }
+];
