@@ -14,6 +14,7 @@ TP1: maquetado con HTML y CSS. TP2: interactividad y persistencia con JavaScript
 
 El código está separado en tres capas. Cada capa solo importa de la anterior:
 
+```
 js/
 ├── datos/              ← QUÉ información existe y DÓNDE se guarda
 │   ├── usuarios.js         forma de una cuenta (crearUsuario) y cuentas de demostración con su progreso
@@ -30,18 +31,27 @@ js/
     ├── registro.js         controlador de registro.html
     ├── recuperar.js        controlador de recuperar.html
     └── dashboard.js        controlador de dashboard.html: saludo, tarjetas de cursos, resumen y estado inicial
+```
 
-Cada HTML carga un único <script type="module"> (el controlador de la vista); ese módulo importa lo que necesita de las otras capas. Detalle de los cambios: ver CAMBIOS.md.
+Cada HTML carga un único `<script type="module">` (el controlador de la vista);
+ese módulo importa lo que necesita de las otras capas. Detalle de los cambios: ver `CAMBIOS.md`.
 
-## Como se conectan las capas
+### Cómo se conectan las capas
 
-Formularios (vista 1): presentación lee los campos → lógica valida y decide → datos guarda o lee → la lógica devuelve { ok, campo, mensaje } → presentación muestra el resultado.
+**Formularios (vista 1):** presentación lee los campos → lógica valida y decide →
+datos guarda o lee → la lógica devuelve `{ ok, campo, mensaje }` → presentación muestra el resultado.
 
-Dashboard (vista 2): navegacion.js devuelve la cuenta activa → dashboard.js recorre cursos.js y, por cada curso, le pide a progreso.js el porcentaje de esa cuenta → arma la tarjeta y la agrega al contenedor vacío #lista-cursos del HTML. El resumen (racha, XP, liga y meta diaria) se completa con los datos de la misma cuenta.
+**Dashboard (vista 2):** `navegacion.js` devuelve la cuenta activa → `dashboard.js` recorre
+`cursos.js` y, por cada curso, le pide a `progreso.js` el porcentaje de esa cuenta → arma la tarjeta
+y la agrega al contenedor vacío `#lista-cursos` del HTML. El resumen (racha, XP, liga y meta diaria)
+se completa con los datos de la misma cuenta.
 
-## Datos guardados en localStorage
-lingoweb_usuarios: arreglo con todas las cuentas (si no existe, se cargan las de demostración). Cada cuenta guarda su avance en progreso, con las lecciones terminadas por curso. Ejemplo: { ingles: ["l1", "l2"], aleman: ["l1"] }.
-lingoweb_sesion: solo el id de la cuenta activa. Cerrar sesión borra esta clave; las cuentas y su progreso se conservan.
+### Datos guardados en localStorage
+
+- `lingoweb_usuarios`: arreglo con todas las cuentas (si no existe, se cargan las de demostración).
+  Cada cuenta guarda su avance en `progreso`, con las lecciones terminadas por curso.
+  Ejemplo: `{ ingles: ["l1", "l2"], aleman: ["l1"] }`.
+- `lingoweb_sesion`: solo el `id` de la cuenta activa. Cerrar sesión borra esta clave; las cuentas y su progreso se conservan.
 
 ## Integrantes
 
