@@ -87,3 +87,25 @@ export const validarEmailRecuperacion = (email) => {                // recibe el
   }                                                                 
   return null;                                                      // email con formato correcto (si existe o no lo decide autenticacion.js)
 };                                                                  
+
+// ---------------------------------------------------------------------------
+// Vista 3: validación del formulario de opiniones del curso.
+// La consigna pide "elegir y guardar una calificación y comentarios no vacíos".
+export const LARGO_MAXIMO_COMENTARIO = 300;
+ 
+export const validarOpinion = (estrellas, comentario) => {
+  // Si no se eligió ninguna estrella, marcamos la primera opción para que la persona vea dónde elegir
+  if (!estrellas) {
+    return { campo: "estrella-1", mensaje: "Elige una calificación de 1 a 5 estrellas." };
+  }
+  // El comentario no puede quedar vacío
+  if (!comentario) {
+    return { campo: "comentario", mensaje: "Escribe un comentario antes de publicar." };
+  }
+  // Ni ser demasiado largo
+  if (comentario.length > LARGO_MAXIMO_COMENTARIO) {
+    return { campo: "comentario", mensaje: `El comentario puede tener hasta ${LARGO_MAXIMO_COMENTARIO} caracteres.` };
+  }
+  // Todo bien
+  return null;
+};
