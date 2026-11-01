@@ -178,6 +178,72 @@
     background-color: #fef2f2;
 }
 
+/* TP2 · Estados que agrega el JavaScript (presentacion/ui.js y los controladores) */
+input[aria-invalid="true"] {     /* input que ui.js marcó como "a revisar" */
+    border-color: #b91c1c;       /* borde rojo, mismo tono que .resultado-incorrecto */
+    outline-color: #b91c1c;      /* el contorno de foco también en rojo */
+}
+
+button:disabled {                /* botón que el controlador deshabilita mientras redirige */
+    opacity: 0.6;                /* se ve atenuado: indica que ya no se puede presionar */
+    cursor: wait;                /* cursor de espera durante la redirección */
+}
+
+/* TP2 · Vista 3: opiniones del curso */
+.campo textarea {                /* mismo aspecto que los demás campos de los formularios */
+    width: 100%;
+    padding: 0.75rem;
+    border: 0.0625rem solid #aab3c2;
+    border-radius: 0.5rem;
+    resize: vertical;            /* solo se puede agrandar hacia abajo */
+}
+
+.estrellas {                     /* el grupo de estrellas sin el borde que el navegador le pone a fieldset */
+    border: none;
+    padding: 0;
+}
+
+.estrellas legend {              /* "Calificación:" en negrita, como las etiquetas de los otros campos */
+    font-weight: bold;
+}
+
+.opciones-estrellas {            /* las 5 opciones una al lado de la otra */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.opciones-estrellas label {      /* cada opción: el círculo y su número en la misma línea */
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+}
+
+.campo .opciones-estrellas input {  /* los círculos no ocupan todo el ancho como los otros campos */
+    width: auto;
+}
+
+.lista-opiniones {               /* la lista de opiniones sin viñetas */
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.opinion {                       /* cada opinión en su recuadro */
+    padding: 1rem;
+    border: 0.0625rem solid #dce1eb;
+    border-radius: 0.75rem;
+    background-color: #f8fafc;
+}
+
+.opinion p {
+    margin: 0.25rem 0;
+    overflow-wrap: anywhere;     /* corta palabras muy largas para que no se salgan del recuadro */
+}
+
 @media (max-width: 40rem) {
     .selector-ligas {
         flex-wrap: wrap;
