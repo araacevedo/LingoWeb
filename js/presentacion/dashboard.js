@@ -66,7 +66,7 @@ const crearTarjeta = (curso) => {
       <p class="nivel">Nivel: ${curso.nivel}</p>
     </div>
     <div class="acciones-tarjeta-curso">
-      <a href="${curso.pagina}" class="boton boton-principal">${textoBoton}</a>
+      <a href="curso.html?curso=${curso.id}" class="boton boton-principal">${textoBoton}</a>
     </div>
   `;
 
