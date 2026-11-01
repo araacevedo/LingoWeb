@@ -40,7 +40,7 @@
 
       <a href="tienda.html"> Tienda / Rachas </a>
 
-      <a href="login.html" id="enlace-salir"> Salir </a>
+      <a href="login.html" class="enlace-salir"> Salir </a> <!-- TP2: clase (no id) igual que en las demás páginas; navegacion.js le da el comportamiento de cerrar sesión -->
     </nav>
   </header>
 
@@ -54,109 +54,23 @@
 
         <h1>Mis Cursos de Idiomas</h1>
 
-        <p>Continúa aprendiendo y alcanza tus objetivos.</p>
+        <p id="saludo">Continúa aprendiendo y alcanza tus objetivos.</p> <!-- TP2: dashboard.js cambia este texto por un saludo con el nombre -->
+        <!-- TP2: cartel de bienvenida para cuentas sin actividad; dashboard.js le saca la clase "oculto" cuando corresponde -->
+        <div id="estado-inicial" class="resultado oculto">
+          <p><strong>¡Te damos la bienvenida a LingoWeb!</strong> Todavía no tienes actividad registrada.
+            Elige un idioma y presiona <strong>Empezar</strong> para hacer tu primera lección y sumar experiencia.</p>
+        </div>
       </header>
 
-      <div class="contenedor-cursos">
-        <!-- INGLÉS -->
-
-        <article class="tarjeta-curso">
-          <input type="checkbox" id="archivar-ingles" class="checkbox-archivar-curso" aria-hidden="true"
-            tabindex="-1" />
-          <div class="bandera">🇬🇧</div>
-
-          <div class="informacion-curso">
-            <h2>Inglés</h2>
-            <p>Inglés desde Español</p>
-
-            <div class="progreso-info">
-              <span>Progreso</span>
-              <strong>45%</strong>
-            </div>
-
-            <progress class="barra-progreso" value="45" max="100" aria-label="Progreso del curso de inglés">
-              45%
-            </progress>
-
-            <p class="nivel">Nivel: Intermedio (B1)</p>
-          </div>
-
-          <div class="acciones-tarjeta-curso">
-            <a href="cursoIngles.html" class="boton boton-principal">Continuar</a>
-            <label for="archivar-ingles" class="boton-archivar-curso" role="button"
-              aria-label="Archivar curso de inglés">Archivar curso</label>
-          </div>
-        </article>
-
-        <!-- ALEMÁN -->
-
-        <article class="tarjeta-curso">
-          <input type="checkbox" id="archivar-aleman" class="checkbox-archivar-curso" aria-hidden="true"
-            tabindex="-1" />
-          <div class="bandera">🇩🇪</div>
-
-          <div class="informacion-curso">
-            <h2>Alemán</h2>
-
-            <p>Alemán desde Español</p>
-
-            <div class="progreso-info">
-              <span> Progreso </span>
-
-              <strong> 12% </strong>
-            </div>
-
-            <progress class="barra-progreso" value="12" max="100" aria-label="Progreso del curso de alemán">
-              12%
-            </progress>
-
-            <p class="nivel">Nivel: Principiante (A1)</p>
-          </div>
-
-          <div class="acciones-tarjeta-curso">
-            <a href="cursoAleman.html" class="boton boton-principal">Continuar</a>
-            <label for="archivar-aleman" class="boton-archivar-curso" role="button"
-              aria-label="Archivar curso de alemán">Archivar curso</label>
-          </div>
-        </article>
-
-        <!-- CHINO -->
-
-        <article class="tarjeta-curso">
-          <input type="checkbox" id="archivar-chino" class="checkbox-archivar-curso" aria-hidden="true" tabindex="-1" />
-          <div class="bandera">🇨🇳</div>
-
-          <div class="informacion-curso">
-            <h2>Chino Mandarín</h2>
-
-            <p>Chino desde Español</p>
-
-            <div class="progreso-info">
-              <span> Progreso </span>
-
-              <strong> 0% </strong>
-            </div>
-
-            <progress class="barra-progreso" value="0" max="100" aria-label="Progreso del curso de chino mandarín">
-              0%
-            </progress>
-
-            <p class="nivel">Nivel: Inicial (HSK 1)</p>
-          </div>
-
-          <div class="acciones-tarjeta-curso">
-            <a href="cursoChino.html" class="boton boton-principal">Empezar</a>
-            <label for="archivar-chino" class="boton-archivar-curso" role="button"
-              aria-label="Archivar curso de chino mandarín">Archivar curso</label>
-          </div>
-        </article>
-      </div>
+      <!-- TP2: las tarjetas de los cursos ya no se escriben acá; dashboard.js las arma a partir de js/datos/cursos.js -->
+      <div class="contenedor-cursos" id="lista-cursos"></div>
     </section>
 
     <aside class="estadisticas">
       <!--utilizamos aside para contenido relacionado pero secundario-->
 
       <h2>Estadísticas</h2>
+      <!-- TP2: los valores de cada <strong> con id="dato-..." los completa dashboard.js con los datos de la cuenta activa -->
 
       <div class="estadistica">
         <!--"<div class="estadistica">" se repite porque cada uno de esos bloques representa una estadistica independiente, que tendran todos el mismo diseño en el CSS-->
@@ -164,7 +78,7 @@
         <span class="icono-estadistica"> 🔥 </span>
 
         <div>
-          <strong> 5 Días </strong>
+          <strong id="dato-racha">0 días</strong>
 
           <p>Racha actual</p>
         </div>
@@ -174,7 +88,7 @@
         <span class="icono-estadistica"> ⚡ </span>
 
         <div>
-          <strong> 720 XP </strong>
+          <strong id="dato-xp">0 XP</strong>
 
           <p>Experiencia acumulada</p>
         </div>
@@ -184,7 +98,7 @@
         <span class="icono-estadistica"> 🏆 </span>
 
         <div>
-          <strong> Liga Bronce </strong>
+          <strong id="dato-liga">Liga Bronce</strong>
         </div>
       </div>
 
@@ -192,7 +106,7 @@
         <span class="icono-estadistica"> 🎯 </span>
 
         <div>
-          <strong> 50 XP </strong>
+          <strong id="dato-meta">50 XP</strong>
 
           <p>Meta diaria</p>
         </div>
@@ -200,15 +114,10 @@
     </aside>
   </main>
 
-  <script src="./js/datos.js"></script>
-  <script src="./js/storage.js"></script>
-  <script src="./js/calculos.js"></script>
-  <script src="./js/ui.js"></script>
-  <script src="./js/sesion.js"></script>
-
-  <!-- Cargamos el coordinador exclusivo de esta vista -->
-  <script src="./js/dashboard.js"></script>
-
+  <!-- TP2: cargamos UN solo módulo, el controlador de esta vista. type="module" habilita import/export:
+       el navegador descarga solo los archivos que ese controlador importa (y los que importan ellos),
+       en el orden correcto. Los módulos se ejecutan cuando el HTML terminó de cargarse. -->
+  <script type="module" src="./js/presentacion/dashboard.js"></script>
 </body>
 
 </html>
