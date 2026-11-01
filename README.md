@@ -10,45 +10,38 @@ TP1: maquetado con HTML y CSS. TP2: interactividad y persistencia con JavaScript
 - JavaScript con módulos ES (`import`/`export`), sin librerías
 - localStorage para conservar cuentas, progreso y sesión
 
-## Cuentas de demostración
-
-| Usuario | Contraseña |
-|---------|------------|
-| pedro   | demo123    |
-| ana     | demo123    |
-
 ## Estructura del JavaScript (TP2)
 
 El código está separado en tres capas. Cada capa solo importa de la anterior:
 
-```
 js/
-├── datos/            ← QUÉ información existe y DÓNDE se guarda
-│   ├── usuarios.js       forma de una cuenta (crearUsuario) y cuentas demo
-│   ├── almacenamiento.js único archivo que usa localStorage (usuarios y sesión)
-│   └── cursos.js         catálogo de cursos
-├── logica/           ← REGLAS: valida y decide, nunca toca el DOM
-│   ├── validaciones.js   funciones puras de validación de formularios
-│   └── autenticacion.js  iniciar sesión, registrarse, recuperar, cerrar sesión
-└── presentacion/     ← PANTALLA: lee formularios y muestra resultados
-    ├── ui.js             mostrar mensajes y marcar campos con error
-    ├── navegacion.js     páginas públicas/privadas y enlace "Salir"
-    ├── login.js          controlador de login.html
-    ├── registro.js       controlador de registro.html
-    ├── recuperar.js      controlador de recuperar.html
-    └── dashboard.js      controlador de dashboard.html
-```
+├── datos/              ← QUÉ información existe y DÓNDE se guarda
+│   ├── usuarios.js         forma de una cuenta (crearUsuario) y cuentas de demostración con su progreso
+│   ├── almacenamiento.js   único archivo que usa localStorage (usuarios y sesión)
+│   └── cursos.js           los 3 cursos: bandera, nivel, página del mapa y cantidad de lecciones
+├── logica/             ← REGLAS: valida, calcula y decide; nunca toca la pantalla
+│   ├── validaciones.js     revisa los datos de los formularios
+│   ├── autenticacion.js    iniciar sesión, registrarse, recuperar acceso, cerrar sesión, cuenta activa
+│   └── progreso.js         porcentaje de avance de cada curso y si la cuenta ya tiene actividad
+└── presentacion/       ← PANTALLA: lee lo que escribe la persona y arma lo que se ve
+    ├── ui.js               mostrar mensajes y marcar campos con error
+    ├── navegacion.js       el "portero": páginas públicas/privadas y enlace "Salir"
+    ├── login.js            controlador de login.html
+    ├── registro.js         controlador de registro.html
+    ├── recuperar.js        controlador de recuperar.html
+    └── dashboard.js        controlador de dashboard.html: saludo, tarjetas de cursos, resumen y estado inicial
 
-Flujo de un formulario: **presentación** lee los campos → **lógica** valida y decide →
-**datos** guarda/lee → la lógica devuelve `{ ok, campo, mensaje }` → **presentación** muestra el resultado.
+Cada HTML carga un único <script type="module"> (el controlador de la vista); ese módulo importa lo que necesita de las otras capas. Detalle de los cambios: ver CAMBIOS.md.
 
-Cada HTML carga un único `<script type="module">` (el controlador de la vista);
-ese módulo importa lo que necesita de las otras capas. Detalle de los cambios: ver `CAMBIOS.md`.
+## Como se conectan las capas
 
-### Datos guardados en localStorage
+Formularios (vista 1): presentación lee los campos → lógica valida y decide → datos guarda o lee → la lógica devuelve { ok, campo, mensaje } → presentación muestra el resultado.
 
-- `lingoweb_usuarios`: array con todas las cuentas (si no existe, se cargan las de demostración).
-- `lingoweb_sesion`: solo el `id` de la cuenta activa. Cerrar sesión borra esta clave; las cuentas y su progreso se conservan.
+Dashboard (vista 2): navegacion.js devuelve la cuenta activa → dashboard.js recorre cursos.js y, por cada curso, le pide a progreso.js el porcentaje de esa cuenta → arma la tarjeta y la agrega al contenedor vacío #lista-cursos del HTML. El resumen (racha, XP, liga y meta diaria) se completa con los datos de la misma cuenta.
+
+## Datos guardados en localStorage
+lingoweb_usuarios: arreglo con todas las cuentas (si no existe, se cargan las de demostración). Cada cuenta guarda su avance en progreso, con las lecciones terminadas por curso. Ejemplo: { ingles: ["l1", "l2"], aleman: ["l1"] }.
+lingoweb_sesion: solo el id de la cuenta activa. Cerrar sesión borra esta clave; las cuentas y su progreso se conservan.
 
 ## Integrantes
 
