@@ -1,18 +1,15 @@
-// Respuesta correcta de este ejercicio, en el orden esperado.
-const respuestaCorrecta = ["Buenos", "días", "¿cómo", "estás?"];
+// Compara las palabras elegidas con la respuesta del ejercicio activo.
+export const evaluarRespuesta = (palabrasElegidas, respuestaCorrecta) => {
+  // Normaliza mayúsculas y espacios para comparar el contenido.
+  const normalizar = (palabras) =>
+    palabras.map((palabra) => palabra.trim().toLowerCase());
 
-// Compara la selección con la respuesta esperada.
-export const evaluarRespuesta = (palabrasElegidas) => {
-  const seleccion = palabrasElegidas.map((palabra) =>
-    palabra.trim().toLowerCase(), // Normalizo la selección para que no importe mayúsculas ni espacios al principio o al final
-  );
+  const seleccion = normalizar(palabrasElegidas);
+  const correcta = normalizar(respuestaCorrecta);
 
-  const correcta = respuestaCorrecta.map((palabra) => 
-    palabra.toLowerCase(),
-  );
-
+  // El orden y la cantidad de palabras también deben coincidir.
   return (
     seleccion.length === correcta.length &&
     seleccion.every((palabra, indice) => palabra === correcta[indice])
-  ); // Devuelve true si la selección coincide con la respuesta correcta, false en caso contrario
+  );
 };
