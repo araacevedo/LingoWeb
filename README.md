@@ -37,7 +37,7 @@ js/
 │   └── opiniones.js        opiniones de un curso, promedio y publicar una nueva
 └── presentacion/       ← PANTALLA: lee lo que escribe la persona y arma lo que se ve
     ├── ui.js               mostrar mensajes y marcar campos con error
-    ├── navegacion.js       el "portero": páginas públicas/privadas y enlace "Salir"
+    ├── navegacion.js       páginas públicas/privadas y enlace "Salir"
     ├── login.js            controlador de login.html
     ├── registro.js         controlador de registro.html
     ├── recuperar.js        controlador de recuperar.html
