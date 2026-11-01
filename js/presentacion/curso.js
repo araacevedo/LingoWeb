@@ -10,10 +10,25 @@
 
 // Traemos lo que necesitamos de cada capa
 import { iniciarPaginaPrivada, irA } from "./navegacion.js";
-import { mostrarMensaje, marcarCampoInvalido, limpiarCamposInvalidos, leerCampo } from "./ui.js";
-import { buscarCurso } from "../datos/cursos.js";
-import { calcularPorcentaje, obtenerLecciones, obtenerResultados, obtenerLeccionActual, obtenerEstadoLeccion } from "../logica/progreso.js";
-import { obtenerOpinionesDelCurso, calcularPromedio, publicarOpinion } from "../logica/opiniones.js";
+import {
+  mostrarMensaje,
+  marcarCampoInvalido,
+  limpiarCamposInvalidos,
+  leerCampo,
+} from "./ui.js";
+import { buscarCurso } from "../datos/catalogo.js";
+import {
+  calcularPorcentaje,
+  obtenerLecciones,
+  obtenerResultados,
+  obtenerLeccionActual,
+  obtenerEstadoLeccion,
+} from "../logica/progreso.js";
+import {
+  obtenerOpinionesDelCurso,
+  calcularPromedio,
+  publicarOpinion,
+} from "../logica/opiniones.js";
 
 // El portero: nos da la cuenta de quien está conectado, o null si lo mandó al login
 const usuario = iniciarPaginaPrivada();
@@ -24,14 +39,19 @@ const parametros = new URLSearchParams(window.location.search);
 const curso = buscarCurso(parametros.get("curso"));
 
 // Textos que se muestran según el estado de cada lección (no dependemos solo del color)
-const ICONOS = { "completada": "🟢", "en-progreso": "🟡", "bloqueada": "🔒" };
-const NOMBRES_ESTADO = { "completada": "Completada", "en-progreso": "En curso", "bloqueada": "Bloqueada" };
+const ICONOS = { completada: "🟢", "en-progreso": "🟡", bloqueada: "🔒" };
+const NOMBRES_ESTADO = {
+  completada: "Completada",
+  "en-progreso": "En curso",
+  bloqueada: "Bloqueada",
+};
 
 // Completa el encabezado: nombre del curso, porcentaje de avance y unidad actual
 const mostrarCabecera = () => {
   // El título de la pestaña del navegador
   document.title = `LingoWeb - Curso de ${curso.titulo}`;
-  document.getElementById("titulo-curso").textContent = `${curso.bandera} ${curso.descripcion}`;
+  document.getElementById("titulo-curso").textContent =
+    `${curso.bandera} ${curso.descripcion}`;
 
   const porcentaje = calcularPorcentaje(usuario, curso);
   const actual = obtenerLeccionActual(usuario, curso);
@@ -39,7 +59,9 @@ const mostrarCabecera = () => {
 
   // Si queda alguna lección por hacer, buscamos en qué unidad está para mostrarla como "unidad actual"
   if (actual) {
-    const unidadActual = curso.unidades.find((unidad) => unidad.lecciones.includes(actual));
+    const unidadActual = curso.unidades.find((unidad) =>
+      unidad.lecciones.includes(actual),
+    );
     texto = texto + ` · Unidad actual: ${unidadActual.titulo}`;
   } else {
     texto = texto + " · ¡Completaste todas las lecciones!";
@@ -132,7 +154,8 @@ const mostrarOpiniones = () => {
 
   // Si no hay opiniones, lo decimos en vez de dejar la lista vacía
   if (opiniones.length === 0) {
-    promedio.textContent = "Todavía no hay opiniones. ¡Sé la primera persona en opinar!";
+    promedio.textContent =
+      "Todavía no hay opiniones. ¡Sé la primera persona en opinar!";
     return;
   }
 
@@ -142,7 +165,8 @@ const mostrarOpiniones = () => {
 
   opiniones.forEach((opinion) => {
     // Las estrellas en dibujo: ★ por cada estrella elegida y ☆ por las que faltan hasta 5
-    const dibujo = "★".repeat(opinion.estrellas) + "☆".repeat(5 - opinion.estrellas);
+    const dibujo =
+      "★".repeat(opinion.estrellas) + "☆".repeat(5 - opinion.estrellas);
     // Si la escribió la persona conectada, lo aclaramos
     const marcaPropia = opinion.usuarioId === usuario.id ? " (tú)" : "";
 
@@ -173,7 +197,12 @@ const iniciarFormularioOpinion = () => {
     const estrellas = elegida ? Number(elegida.value) : 0;
 
     // Le pasamos todo a la lógica, que valida y guarda
-    const resultado = publicarOpinion(usuario, curso.id, estrellas, leerCampo("comentario"));
+    const resultado = publicarOpinion(
+      usuario,
+      curso.id,
+      estrellas,
+      leerCampo("comentario"),
+    );
 
     // Si algo está mal, marcamos el campo y explicamos qué corregir
     if (!resultado.ok) {

@@ -8,9 +8,9 @@
 // =============================================================================
 
 // Traemos lo que necesitamos de cada capa
-import { iniciarPaginaPrivada } from "./navegacion.js";                     // revisa que haya sesión iniciada
-import { catalogoCursos } from "../datos/cursos.js";                         // la lista de cursos (Inglés, Alemán, Chino)
-import { calcularPorcentaje, tieneActividad } from "../logica/progreso.js";  // las cuentas sobre el avance
+import { iniciarPaginaPrivada } from "./navegacion.js"; // revisa que haya sesión iniciada
+import { catalogoCursos } from "../datos/catalogo.js"; // la lista de cursos (Inglés, Alemán, Chino)
+import { calcularPorcentaje, tieneActividad } from "../logica/progreso.js"; // las cuentas sobre el avance
 
 // Si no hay sesión, desde el navegacion.js manda al login y  devuelve null.
 // Si hay sesión, nos devuelve la cuenta de quien está conectado.
@@ -18,7 +18,8 @@ const usuario = iniciarPaginaPrivada();
 
 // Cambia el texto debajo del título por un saludo con el nombre de la persona
 const mostrarSaludo = () => {
-  document.getElementById("saludo").textContent = `¡Hola, ${usuario.nombre}! Continúa aprendiendo y alcanza tus objetivos.`;
+  document.getElementById("saludo").textContent =
+    `¡Hola, ${usuario.nombre}! Continúa aprendiendo y alcanza tus objetivos.`;
 };
 
 // Completa el cuadro de estadísticas de la derecha con los datos de la cuenta
@@ -26,7 +27,8 @@ const mostrarResumen = () => {
   // Si la racha es de 1 escribimos "día"; si no, "días"
   const palabraDias = usuario.racha === 1 ? "día" : "días";
   // Ponemos cada dato en su lugar, buscando cada casillero por su id
-  document.getElementById("dato-racha").textContent = `${usuario.racha} ${palabraDias}`;
+  document.getElementById("dato-racha").textContent =
+    `${usuario.racha} ${palabraDias}`;
   document.getElementById("dato-xp").textContent = `${usuario.xp} XP`;
   document.getElementById("dato-liga").textContent = `Liga ${usuario.liga}`;
   document.getElementById("dato-meta").textContent = `${usuario.metaDiaria} XP`;
@@ -82,7 +84,7 @@ const mostrarCursos = () => {
   catalogoCursos.forEach((curso) => lista.append(crearTarjeta(curso)));
 };
 
-// Solo armamos el panel si hay alguien con la sesion iniciada 
+// Solo armamos el panel si hay alguien con la sesion iniciada
 if (usuario) {
   mostrarSaludo();
   mostrarEstadoInicial();
