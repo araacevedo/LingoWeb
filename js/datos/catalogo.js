@@ -21,11 +21,19 @@
 // -Se quito pagina: "cursoIngles.html"
 // Indicaba a qué página llevaba el botón de la tarjeta. Ya no hace falta, porque 
 // ahora hay una sola página para todos los cursos y el enlace se arma con el id
+//
 // -Se quito totalLecciones:3
 // Era un número escrito a mano. Ahora que las lecciones están en la lista, se cuentan 
 // solas con obtenerLecciones(curso).length en progreso.js. Así, si mañana se agrega 
 // una lección, el porcentaje se ajusta sin tocar nada más. Antes había que acordarse 
 // de cambiar ese número, y si alguien se olvidaba, el porcentaje quedaba mal.
+// 
+// -Se agrego tambien paginaLeccion por cada idioma:
+// A dónde llevan los botones “Empezar” y “Repetir” de cada lección. Es provisorio: 
+// por ahora apunta a las páginas de lección fijas del TP1. En la vista 4 se reemplaza 
+// por una lección real.
+//
+// -Se agrego la funcion buscarCurso, al final del archivo
 // =============================================================================
 
 // export: lo podrán importar el dashboard y el mapa del curso. const: la referencia al arreglo no se reasigna.
