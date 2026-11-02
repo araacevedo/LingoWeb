@@ -91,6 +91,11 @@
     margin: 1rem 0;
 }
 
+/* Mantiene el comportamiento del atributo HTML aunque otros estilos tengan display. */
+[hidden] {
+    display: none !important;
+}
+
 .respuesta {
     min-height: 4rem;
     padding: 1rem;

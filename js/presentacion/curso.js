@@ -38,6 +38,17 @@ const parametros = new URLSearchParams(window.location.search);
 // Buscamos ese curso en la lista de cursos (si no existe, nos da null)
 const curso = buscarCurso(parametros.get("curso"));
 
+// Arma la dirección de la lección con el curso y su ID.
+const crearUrlLeccion = (leccionId) => {
+  const parametros = new URLSearchParams({
+    //prepara los parámetros de la dirección
+    curso: curso.id,
+    leccion: leccionId,
+  });
+
+  return `${curso.paginaLeccion}?${parametros}`;
+};
+
 // Textos que se muestran según el estado de cada lección (no dependemos solo del color)
 const ICONOS = { completada: "🟢", "en-progreso": "🟡", bloqueada: "🔒" };
 const NOMBRES_ESTADO = {
@@ -88,10 +99,10 @@ const crearLeccion = (leccion, numero) => {
     const resultado = obtenerResultados(usuario, curso.id)[leccion.id];
     const palabraErrores = resultado.errores === 1 ? "error" : "errores";
     detalle = `<p>Resultado: ${resultado.xp} XP · ${resultado.errores} ${palabraErrores} · terminada el ${resultado.fecha}</p>`;
-    boton = `<a href="${curso.paginaLeccion}" class="boton boton-secundario">Repetir</a>`;
+    boton = `<a href="${crearUrlLeccion(leccion.id)}" class="boton boton-secundario">Repetir</a>`;
   } else if (estado === "en-progreso") {
     // Es la que le toca: botón para empezarla
-    boton = `<a href="${curso.paginaLeccion}" class="boton boton-principal">Empezar</a>`;
+    boton = `<a href="${crearUrlLeccion(leccion.id)}" class="boton boton-principal">Empezar</a>`;
   } else {
     // Bloqueada: explicamos por qué todavía no se puede hacer
     const actual = obtenerLeccionActual(usuario, curso);
