@@ -26,13 +26,9 @@
 
     <nav aria-label="Navegación principal">
       <a href="dashboard.html"> Cursos </a>
-
       <a href="perfil.html" class="activo"> Perfil </a>
-
       <a href="ranking.html"> Clasificación </a>
-
       <a href="tienda.html"> Tienda / Rachas </a>
-
       <a href="login.html" class="enlace-salir"> Salir </a>
     </nav>
   </header>
@@ -40,43 +36,44 @@
   <main class="contenedor-perfil">
     <section class="cabecera-perfil">
       <div class="avatar">PR</div>
-
       <h1>Pedro Ramirez</h1>
-
       <p>@pedro</p>
-
       <p>pedro@lingoweb.edu</p>
+      <p class="fecha-alta"></p>
     </section>
 
     <section class="ajustes">
       <h2>Ajustes de cuenta</h2>
 
-      <form action="#exito-perfil" method="get">
+      <form id="form-perfil" novalidate>
+        <div class="campo">
+          <label for="nombre"> Nombre completo </label>
+          <input type="text" id="nombre" required />
+        </div>
+
         <div class="campo">
           <label for="usuario"> Usuario </label>
-          <input type="text" id="usuario" value="pedro" required />
+          <input type="text" id="usuario" required />
         </div>
 
         <div class="campo">
           <label for="email"> Email institucional </label>
-          <input type="email" id="email" value="pedro@lingoweb.edu" required />
+          <input type="email" id="email" required />
         </div>
 
         <div class="campo">
-          <label for="password-actual">Contraseña actual</label>
+          <label for="password-actual">Contraseña actual (obligatoria para guardar cambios)</label>
           <input type="password" id="password-actual" autocomplete="current-password" required />
         </div>
 
         <div class="campo">
-          <label for="password-nueva">Nueva contraseña</label>
-          <input type="password" id="password-nueva" autocomplete="new-password" required />
+          <label for="password-nueva">Nueva contraseña (opcional)</label>
+          <input type="password" id="password-nueva" autocomplete="new-password" />
         </div>
 
         <div class="campo">
-          <label for="password-confirmacion">
-            Confirmar nueva contraseña
-          </label>
-          <input type="password" id="password-confirmacion" autocomplete="new-password" required />
+          <label for="password-confirmacion">Confirmar nueva contraseña</label>
+          <input type="password" id="password-confirmacion" autocomplete="new-password" />
         </div>
 
         <div class="campo">
@@ -92,23 +89,13 @@
             Guardar cambios
           </button>
 
-          <a href="login.html" class="boton boton-secundario">
+          <a href="login.html" class="boton boton-secundario enlace-salir">
             Cerrar sesión
           </a>
         </div>
       </form>
 
-      <div id="exito-perfil" class="resultado resultado-correcto">
-        <h2>✓ ¡Cambios guardados!</h2>
-        <p>Tu perfil y contraseña se han actualizado correctamente.</p>
-      </div>
-
-      <div id="error-perfil" class="resultado resultado-incorrecto">
-        <h2>✕ Error al guardar</h2>
-        <p>La contraseña actual ingresada es incorrecta. No se aplicaron los cambios.</p>
-      </div>
-      <p class="enlace-secundario"><a href="#error-perfil">Simular error al actualizar</a></p>
-
+      <div id="mensaje-perfil" class="resultado oculto" role="alert"></div>
     </section>
 
     <section class="logros">
@@ -116,23 +103,22 @@
 
       <div class="estadistica">
         <span> ⚡ XP acumulados </span>
-
-        <strong> 720 XP </strong>
+        <strong> 0 XP </strong>
       </div>
 
       <div class="estadistica">
         <span> 🔥 Racha actual </span>
-
-        <strong> 5 días </strong>
+        <strong> 0 días </strong>
       </div>
 
       <div class="estadistica">
         <span> 🏆 Liga </span>
-
         <strong> Bronce </strong>
       </div>
     </section>
   </main>
+
+  <script type="module" src="./js/presentacion/perfil.js"></script>
 </body>
 
 </html>

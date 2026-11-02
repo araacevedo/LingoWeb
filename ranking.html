@@ -54,42 +54,17 @@
 
       <div class="ranking-table-container">
         <table class="tabla-clasificacion">
-          <!--Usamos table para datos tabulares-->
           <thead>
-            <!--Agrupa el contenido de encabezado (títulos de las columnas)-->
             <tr>
-              <!-- Define una fila horizontal que contendrá celdas-->
               <th>Puesto</th>
-              <!--<th> Define una celda de encabezado. El texto suele ser negrita y centrado por defecto; indica el "nombre" de la fila o columna-->
+              <th>Avatar</th>
               <th>Estudiante</th>
               <th>XP Semanal</th>
               <th>Estado</th>
             </tr>
           </thead>
-
-          <tbody>
-            <!-- Contiene el cuerpo principal de los datos. Puede haber varios en una sola tabla para separar secciones de datos-->
-
-            <tr>
-              <td>🥇 1</td>
-              <td>MariaG_22</td>
-              <td>850 XP</td>
-              <td>Zona de Ascenso</td>
-              <!--<td> Es la celda estándar que contiene los datos o valores específicos-->
-            </tr>
-
-            <tr class="usuario-actual">
-              <td>🥈 2</td>
-              <td>Pedro <span>(Tú)</span></td>
-              <td>720 XP</td>
-              <td>Zona de Ascenso</td>
-            </tr>
-            <tr>
-              <td>🥉 3</td>
-              <td>Carlos_Dev</td>
-              <td>610 XP</td>
-              <td>Zona de Ascenso</td>
-            </tr>
+          <!-- Aca inyecta los datos ranking.js -->
+          <tbody id="cuerpo-ranking" data-liga="Bronce">
           </tbody>
         </table>
       </div>
