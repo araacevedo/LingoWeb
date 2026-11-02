@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TP2: leccion.js cambia el título por el de la lección elegida -->
+    <title>Lección | LingoWeb</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/forms-buttons.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+
+  <!-- TP2: esta página reemplaza a leccionIngles.html, leccionAleman.html y leccionChino.html.
+       Es UNA sola página para todas las lecciones: el curso y la lección se eligen con la dirección,
+       por ejemplo leccion.html?curso=aleman&leccion=l2, y leccion.js arma el contenido con esos datos. -->
+
+  <body>
+    <header class="encabezado-leccion">
+      <!-- TP2: leccion.js completa la dirección de vuelta al mapa, en la misma lección (#leccion-l2) -->
+      <a id="volver-curso" href="dashboard.html" aria-label="Salir de la lección y volver al curso"> ✕ </a>
+
+      <div class="progreso-leccion">
+        <span id="numero-ejercicio">Ejercicio 1 de 3</span>
+        <strong id="progreso-texto">1 / 3</strong>
+
+        <progress id="barra-progreso" value="1" max="3" aria-label="Avance de la lección">
+          1 de 3
+        </progress>
+      </div>
+
+      <div class="vidas" aria-label="Vidas restantes: 3 de 3">❤️❤️❤️</div>
+    </header>
+
+    <main class="contenedor-leccion">
+      <section class="ejercicio" id="ejercicio">
+        <div class="contenido-ejercicio">
+          <!-- TP2: leccion.js escribe acá el idioma y el nombre de la lección -->
+          <p class="etiqueta-seccion" id="idioma-leccion"></p>
+
+          <h1>Traduce la siguiente oración:</h1>
+
+          <p class="frase" id="frase"></p>
+          <audio id="audio-ejercicio" class="audio-frase" controls preload="none" aria-label="Escuchar la frase" hidden>
+            Tu navegador no admite audio.
+          </audio>
+          <div class="respuesta" id="respuesta" aria-label="Tu respuesta"></div>
+
+          <hr />
+          <div class="banco-palabras">
+            <p>Banco de palabras disponibles:</p>
+            <ul class="lista-palabras" id="banco-palabras"></ul>
+          </div>
+        </div>
+
+        <footer class="acciones-ejercicio">
+          <button type="button" id="comprobar-respuesta" class="boton boton-principal">
+            Comprobar respuesta
+          </button>
+        </footer>
+
+        <!-- TP2: estado del ejercicio (pendiente, correcta o incorrecta). Se anuncia en los lectores de pantalla -->
+        <div id="mensaje-resultado" class="resultado" role="status" aria-live="polite"></div>
+
+        <!-- Se muestra únicamente cuando la respuesta es correcta. -->
+        <button type="button" id="continuar-leccion" class="boton boton-principal" hidden>
+          Continuar
+        </button>
+        <!-- Se muestra cuando no quedan vidas. -->
+        <button type="button" id="reintentar-leccion" class="boton boton-secundario" hidden>
+          Reiniciar lección
+        </button>
+      </section>
+
+      <!-- TP2: cierre de la lección. leccion.js lo muestra al terminar (resumen con resultado y XP)
+           o si la lección no se puede hacer (no existe o está bloqueada). -->
+      <section id="cierre-leccion" class="resultado" hidden>
+        <h2 id="cierre-titulo"></h2>
+        <p id="cierre-texto"></p>
+        <div class="acciones-resultado">
+          <a id="cierre-mapa" href="dashboard.html" class="boton boton-principal">Volver al mapa del curso</a>
+          <a href="dashboard.html" class="boton boton-secundario">Ir al dashboard</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- TP2: controlador de esta vista (módulo) -->
+    <script type="module" src="./js/presentacion/leccion.js"></script>
+  </body>
+</html>
