@@ -9,16 +9,18 @@ El resto del programa pide o entrega datos llamando a estas funciones, sin
 saber cómo ni dónde se guardan.
 - "lingoweb_usuarios" → arreglo con TODAS las cuentas (demo + registradas)
 - "lingoweb_sesion"   → SOLO el id de la cuenta activa
+- "lingoweb_opiniones" → las opiniones de todos los cursos (vista 3)
  =============================================================================*/
 
 // import trae del módulo usuarios.js la constante exportada; la ruta es relativa a ESTE archivo y lleva la extensión .js
-import { USUARIOS_DEMO } from "./usuarios.js"; // importamos las cuentas demo para cargarlas en la primera visita
+import { USUARIOS_DEMO, OPINIONES_DEMO } from "./usuarios.js"; // traemos las cuentas y las opiniones de demostración para cargarlas en la primera visita
 
 
 
 const CLAVES = { // Objeto con los nombres de las claves de localStorage. No lleva export porque solo se utiliza aca.       
   usuarios: "lingoweb_usuarios",      // clave donde se guarda la lista de cuentas
-  sesion: "lingoweb_sesion"           // clave donde se guarda el id de la cuenta activa
+  sesion: "lingoweb_sesion",           // clave donde se guarda el id de la cuenta activa
+  opiniones: "lingoweb_opiniones"     // clave donde se guardan las opiniones de los cursos
 };                                    
 
 // --- Funciones genéricas (internas, sin export) ------------------------------
