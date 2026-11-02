@@ -249,6 +249,14 @@ button:disabled {                /* botón que el controlador deshabilita mientr
     overflow-wrap: anywhere;     /* corta palabras muy largas para que no se salgan del recuadro */
 }
 
+/* TP2 · Vista 4: botones del resumen al terminar la lección */
+.acciones-resultado {            /* "Volver al mapa" e "Ir al dashboard", uno al lado del otro */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
 @media (max-width: 40rem) {
     .selector-ligas {
         flex-wrap: wrap;
