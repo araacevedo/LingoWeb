@@ -28,10 +28,9 @@
 // una lección, el porcentaje se ajusta sin tocar nada más. Antes había que acordarse 
 // de cambiar ese número, y si alguien se olvidaba, el porcentaje quedaba mal.
 // 
-// -Se agrego tambien paginaLeccion por cada idioma:
-// A dónde llevan los botones “Empezar” y “Repetir” de cada lección. Es provisorio: 
-// por ahora apunta a las páginas de lección fijas del TP1. En la vista 4 se reemplaza 
-// por una lección real.
+// -En la vista 4 se quitó paginaLeccion: ahora hay una sola página de lección
+// para los tres cursos (leccion.html?curso=ingles&leccion=l2), igual que curso.html.
+// Los ejercicios de cada lección están en datos/lecciones.js.
 //
 // -Se agrego la funcion buscarCurso, al final del archivo
 // =============================================================================
@@ -44,7 +43,6 @@ export const catalogoCursos = [   // arreglo de objetos literales: cada objeto a
     descripcion: "Inglés desde Español", // subtítulo visible en la tarjeta
     bandera: "🇬🇧",               // bandera que pide la consigna en cada tarjeta
     nivel: "Intermedio (B1)",      // nivel que pide la consigna en cada tarjeta
-    paginaLeccion: "leccionIngles.html",  // página del ejercicio (provisoria hasta la vista 4)
     unidades: [
       {
         titulo: "Saludos y presentaciones",              // nombre de la unidad
@@ -68,7 +66,6 @@ export const catalogoCursos = [   // arreglo de objetos literales: cada objeto a
     descripcion: "Alemán desde Español",  // subtítulo
     bandera: "🇩🇪",                       // bandera
     nivel: "Principiante (A1)",           // nivel
-    paginaLeccion: "leccionAleman.html",  // página del ejercicio (provisoria hasta la vista 4)
     unidades: [
       {
         titulo: "Saludos y presentaciones",
@@ -92,7 +89,6 @@ export const catalogoCursos = [   // arreglo de objetos literales: cada objeto a
     descripcion: "Chino desde Español",   // subtítulo
     bandera: "🇨🇳",                       // bandera
     nivel: "Inicial (HSK 1)",             // nivel
-    paginaLeccion: "leccionChino.html",   // página del ejercicio (provisoria hasta la vista 4)
     unidades: [
       {
         titulo: "Saludos y presentaciones",
