@@ -46,7 +46,7 @@ const crearUrlLeccion = (leccionId) => {
     leccion: leccionId,
   });
 
-  return `${curso.paginaLeccion}?${parametros}`;
+  return `leccion.html?${parametros}`;
 };
 
 // Textos que se muestran según el estado de cada lección (no dependemos solo del color)
