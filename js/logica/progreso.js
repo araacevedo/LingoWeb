@@ -2,7 +2,7 @@
 // progreso.js  ·  CAPA LÓGICA
 // Hace las cuentas sobre el avance de cada persona. No muestra nada en
 // pantalla: solo calcula y devuelve el resultado.
-// En las vistas 3 y 4 se van a sumar acá las funciones para completar lecciones.
+// En la vista 4 la lección usa registrarLeccionCompletada para guardar el resultado.
 // =============================================================================
 
 // El progreso y sus resultados se guardan por usuario y por curso.
@@ -56,12 +56,8 @@ export const obtenerEstadoLeccion = (usuario, curso, leccion) => {
 export const tieneActividad = (usuario) => usuario.xp > 0;
 
 // Guarda el resultado y suma XP solo la primera vez que se completa.
-export const registrarLeccionCompletada = (
-  cursoId,
-  leccionId,
-  xp = 10,
-  errores = 0,
-) => {
+// La experiencia (xp) la calcula logica/leccion.js según los errores.
+export const registrarLeccionCompletada = (cursoId, leccionId, xp, errores) => {
   const usuarioActivo = obtenerUsuarioActivo();
 
   if (!usuarioActivo) {
@@ -86,7 +82,7 @@ export const registrarLeccionCompletada = (
   usuario.progreso[cursoId][leccionId] = {
     xp,
     errores,
-    fecha: new Date().toLocaleDateString("es-AR"),
+    fecha: new Date().toLocaleDateString("es-AR", { day: "2-digit", month: "2-digit", year: "numeric" }),
   };
   usuario.xp += xp;
 
