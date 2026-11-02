@@ -14,7 +14,7 @@
 
   <body>
     <header class="encabezado-leccion">
-      <a href="cursoIngles.html" aria-label="Salir de la lección"> ✕ </a>
+      <a id="volver-curso" href="curso.html?curso=ingles#leccion-l1" aria-label="Volver al curso"> ✕ </a>
 
       <div class="progreso-leccion">
         <span id="numero-ejercicio">Ejercicio 1 de 3</span>
@@ -30,7 +30,7 @@
         </progress>
       </div>
 
-      <div class="vidas" aria-label="Vidas restantes">❤️❤️❤️</div>
+      <div class="vidas" aria-label="Vidas restantes: 3 de 3">❤️❤️❤️</div>
     </header>
 
     <main class="contenedor-leccion" data-curso="ingles" data-leccion="l1">
@@ -42,12 +42,13 @@
 
           <p class="frase" id="frase"></p>
           <audio
+            id="audio-ejercicio"
             class="audio-frase"
             controls
             preload="none"
             aria-label="Escuchar la frase en inglés"
+            hidden
           >
-            <source id="audio-ejercicio" src="" type="audio/mpeg" />
             Tu navegador no admite audio.
           </audio>
           <div class="respuesta" id="respuesta" aria-label="Tu respuesta"></div>
@@ -79,6 +80,14 @@
           hidden
         >
           Continuar
+        </button>
+        <button
+          type="button"
+          id="reintentar-leccion"
+          class="boton boton-secundario"
+          hidden
+        >
+          Reiniciar lección
         </button>
       </section>
     </main>

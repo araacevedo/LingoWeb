@@ -5,56 +5,91 @@
 // En las vistas 3 y 4 se van a sumar acá las funciones para completar lecciones.
 // =============================================================================
 
-// Permite leer y guardar las cuentas desde la capa de datos.
+// El progreso y sus resultados se guardan por usuario y por curso.
 import { obtenerUsuarios, guardarUsuarios } from "../datos/almacenamiento.js";
-
-// Permite identificar la cuenta que está usando la aplicación.
 import { obtenerUsuarioActivo } from "./autenticacion.js";
 
-// Calcula qué porcentaje de un curso completó la persona (de 0 a 100).
+// Convierte las unidades del curso en una sola lista de lecciones.
+export const obtenerLecciones = (curso) =>
+  curso.unidades.flatMap((unidad) => unidad.lecciones);
+
+// Devuelve los resultados guardados para un curso o un objeto vacío.
+export const obtenerResultados = (usuario, cursoId) =>
+  usuario.progreso?.[cursoId] ?? {};
+
+// Calcula el porcentaje a partir de las lecciones que tienen resultado.
 export const calcularPorcentaje = (usuario, curso) => {
-  // Buscamos la lista de lecciones terminadas de ese curso; si todavía no empezó, usamos una lista vacía
-  const completadas = usuario.progreso[curso.id] || [];
-  // Lecciones terminadas dividido el total, por 100; Math.round lo redondea para no mostrar decimales
-  return Math.round((completadas.length / curso.totalLecciones) * 100);
+  const lecciones = obtenerLecciones(curso);
+  const resultados = obtenerResultados(usuario, curso.id);
+
+  if (lecciones.length === 0) return 0;
+
+  const completadas = lecciones.filter(
+    (leccion) => resultados[leccion.id],
+  ).length;
+
+  return Math.round((completadas / lecciones.length) * 100);
 };
 
-// Indica si la cuenta ya tuvo alguna actividad. Toda lección suma experiencia,
-// así que si la experiencia sigue en 0, la persona todavía no empezó nada.
+// Devuelve la primera lección que todavía no fue completada.
+export const obtenerLeccionActual = (usuario, curso) => {
+  const resultados = obtenerResultados(usuario, curso.id);
+
+  return (
+    obtenerLecciones(curso).find((leccion) => !resultados[leccion.id]) ?? null
+  );
+};
+
+// Marca cada lección como completada, en curso o bloqueada según el orden.
+export const obtenerEstadoLeccion = (usuario, curso, leccion) => {
+  const resultados = obtenerResultados(usuario, curso.id);
+
+  if (resultados[leccion.id]) return "completada";
+  if (obtenerLeccionActual(usuario, curso)?.id === leccion.id) {
+    return "en-progreso";
+  }
+
+  return "bloqueada";
+};
+
+// Indica si la persona ya ganó experiencia.
 export const tieneActividad = (usuario) => usuario.xp > 0;
 
-// Registra una lección y recompensa solo si es la primera vez que se completa.
-export const registrarLeccionCompletada = (cursoId, leccionId, xp = 10) => {
+// Guarda el resultado y suma XP solo la primera vez que se completa.
+export const registrarLeccionCompletada = (
+  cursoId,
+  leccionId,
+  xp = 10,
+  errores = 0,
+) => {
   const usuarioActivo = obtenerUsuarioActivo();
 
-  // Sin sesión activa no hay una cuenta a la que asignar el avance.
   if (!usuarioActivo) {
     return { ok: false, mensaje: "No hay una sesión activa." };
   }
 
   const usuarios = obtenerUsuarios();
-
-  // Busca la versión del usuario que está dentro de la lista que se guarda.
   const usuario = usuarios.find((item) => item.id === usuarioActivo.id);
 
   if (!usuario) {
     return { ok: false, mensaje: "No se encontró la cuenta activa." };
   }
 
-  // Crea el objeto o la lista del curso si todavía no existen.
-  usuario.progreso ??= {}; // asigna un valor por defecto si es undefined o null
-  usuario.progreso[cursoId] ??= [];
+  usuario.progreso ??= {};
+  usuario.progreso[cursoId] ??= {};
 
-  // Evita volver a premiar una lección ya completada.
-  if (usuario.progreso[cursoId].includes(leccionId)) {
-    // comprueba si la lección ya fue completada
+  // No vuelve a sumar XP si el resultado ya existe.
+  if (usuario.progreso[cursoId][leccionId]) {
     return { ok: true, nueva: false, usuario };
   }
 
-  usuario.progreso[cursoId].push(leccionId);
+  usuario.progreso[cursoId][leccionId] = {
+    xp,
+    errores,
+    fecha: new Date().toLocaleDateString("es-AR"),
+  };
   usuario.xp += xp;
 
-  // Persiste los cambios para que sigan disponibles al volver a entrar.
   guardarUsuarios(usuarios);
 
   return { ok: true, nueva: true, usuario };
