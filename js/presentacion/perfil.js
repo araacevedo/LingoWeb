@@ -5,6 +5,8 @@
 import { iniciarPaginaPrivada } from "./navegacion.js";
 import { mostrarMensaje, marcarCampoInvalido, limpiarCamposInvalidos, leerCampo } from "./ui.js";
 import { actualizarDatosPerfil } from "../logica/perfil.js";
+import { contarLeccionesCompletadas } from "../logica/progreso.js";
+
 
 const usuario = iniciarPaginaPrivada();
 
@@ -32,6 +34,10 @@ if (usuario) {
     estadisticas[0].textContent = `${usuario.xp} XP`;
     estadisticas[1].textContent = `${usuario.racha} ${palabraDias}`;
     estadisticas[2].textContent = usuario.liga;
+  }
+  // Cuarto logro: lecciones terminadas en todos los cursos (lo calcula la capa lógica)
+  if (estadisticas.length >= 4) {
+    estadisticas[3].textContent = contarLeccionesCompletadas(usuario);
   }
 
   // 3. Pre-llenar el formulario con los valores actuales
