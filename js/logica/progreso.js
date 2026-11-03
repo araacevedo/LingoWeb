@@ -55,6 +55,16 @@ export const obtenerEstadoLeccion = (usuario, curso, leccion) => {
 // Indica si la persona ya ganó experiencia.
 export const tieneActividad = (usuario) => usuario.xp > 0;
 
+// Cuenta cuántas lecciones terminó la persona sumando todos sus cursos (la muestra el perfil en "Mis logros").
+// Object.values da los resultados de cada curso; Object.keys(...).length cuenta las lecciones de cada uno.
+export const contarLeccionesCompletadas = (usuario) => {
+  let total = 0;
+  Object.values(usuario.progreso || {}).forEach((resultadosDelCurso) => {
+    total = total + Object.keys(resultadosDelCurso).length;
+  });
+  return total;
+};
+
 // Guarda el resultado y suma XP solo la primera vez que se completa.
 // La experiencia (xp) la calcula logica/leccion.js según los errores.
 export const registrarLeccionCompletada = (cursoId, leccionId, xp, errores) => {
