@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LingoWeb - Ranking Bronce</title>
-  <link rel="stylesheet" href="css/base.css" />
+  <!-- TP2: ranking.js cambia el título según la liga elegida -->
+  <title>Clasificación | LingoWeb</title>  <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/card.css" />
@@ -43,13 +43,17 @@
         <h1>🏆 Tabla de Clasificación</h1>
 
         <nav class="selector-ligas" aria-label="Selector de Ligas">
-          <!--Para que <select> funcione como un menú de navegación, se necesita capturar el clic utilizando JavaScript. Se cambia por un <nav> que anida <a> para lograr ogramos simular un selector interactivo.-->
-          <a href="ranking.html" class="tab-liga liga-activa">🥉 Liga Bronce</a>
-          <a href="rankingPlata.html" class="tab-liga">🥈 Liga Plata</a>
-          <a href="rankingOro.html" class="tab-liga">🥇 Liga Oro</a>
+          <!-- TP2: selector de liga. Las tres opciones abren esta MISMA página con la liga en la dirección
+               (ranking.html?liga=Plata) y ranking.js arma la tabla de esa liga y marca la pestaña elegida.
+               Reemplaza a las páginas rankingPlata.html y rankingOro.html. -->
+          <a href="ranking.html?liga=Bronce" class="tab-liga" data-liga="Bronce">🥉 Liga Bronce</a>
+          <a href="ranking.html?liga=Plata" class="tab-liga" data-liga="Plata">🥈 Liga Plata</a>
+          <a href="ranking.html?liga=Oro" class="tab-liga" data-liga="Oro">🥇 Liga Oro</a>
         </nav>
 
-        <p>Los 5 primeros ascienden a la Liga de Plata esta semana.</p>
+        <!-- TP2: ranking.js escribe el nombre de la liga elegida y la indicación de ascenso o permanencia -->
+        <h2 id="nombre-liga">Liga</h2>
+        <p id="info-liga"></p>
       </header>
 
       <div class="ranking-table-container">
@@ -64,7 +68,7 @@
             </tr>
           </thead>
           <!-- Aca inyecta los datos ranking.js -->
-          <tbody id="cuerpo-ranking" data-liga="Bronce">
+          <tbody id="cuerpo-ranking">
           </tbody>
         </table>
       </div>
