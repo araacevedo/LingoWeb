@@ -19,7 +19,29 @@ if (usuarioActivo) {
   const tbody = document.getElementById("cuerpo-ranking");
 
   if (tbody) {
-    const ligaActual = tbody.getAttribute("data-liga");
+    // 1. Leemos la liga desde la URL
+    const parametros = new URLSearchParams(window.location.search);
+    let ligaActual = parametros.get("liga");
+
+    // 2. Si entran a ranking.html a secas (sin parámetro), mostramos su liga por defecto
+    if (!ligaActual) {
+      ligaActual = usuarioActivo.liga;
+    }
+
+    // 3. Actualizamos el título <h2>
+    const tituloLiga = document.getElementById("nombre-liga");
+    if (tituloLiga) {
+      tituloLiga.textContent = `Liga ${ligaActual}`;
+    }
+
+    // 4. Marcamos visualmente la pestaña activa en el menú
+    document.querySelectorAll(".tab-liga").forEach(tab => {
+      if (tab.getAttribute("data-liga") === ligaActual) {
+        tab.classList.add("liga-activa");
+      } else {
+        tab.classList.remove("liga-activa");
+      }
+    });
     const usuariosRanking = obtenerRankingPorLiga(ligaActual);
 
     // Actualizar el texto informativo con la liga real del usuario conectado
