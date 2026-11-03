@@ -5,11 +5,15 @@
 //     sesión iniciada. Si no hay sesión, mandamos a la persona al login.
 //   - Las páginas PÚBLICAS (login, registro, recuperar) son para quien todavía
 //     no entró. Si alguien ya inició sesión, lo mandamos al dashboard.
-// También hace funcionar el botón "Salir" del menú.
+// También hace funcionar el botón "Salir" del menú y aplica el idioma de interfaz
+// que la persona eligió en su perfil (Vista 5).
 // =============================================================================
 
 // Traemos dos funciones de logica/autenticacion.js. La ruta empieza con "../" porque tenemos que salir de la carpeta "presentacion" y entrar en la carpeta "logica".
 import { obtenerUsuarioActivo, cerrarSesion } from "../logica/autenticacion.js"; // obtenerUsuarioActivo = "¿quién está conectado?"; cerrarSesion = "desconectar"
+
+// Traemos las traducciones de los textos fijos de la interfaz
+import { TEXTOS } from "../datos/textos.js";
 
 // Lleva a la persona a otra página del sitio.
 export const irA = (pagina) => {                                    // "pagina" es el nombre del archivo al que queremos ir, por ejemplo "dashboard.html"
@@ -26,7 +30,9 @@ export const iniciarPaginaPrivada = () => {                         // no recibe
   }                                                                
 
   activarEnlacesSalir();                                            // si llegamos acá, hay alguien conectado: hacemos funcionar el botón "Salir" del menú
+  aplicarIdioma(usuario.idiomaInterfaz);                            // mostramos la página en el idioma que la persona eligió en su perfil
 
+  
   // Caso especial del botón "atrás": algunos navegadores, al volver atrás, muestran una "foto" guardada
   // de la página en vez de cargarla de nuevo, y entonces este código no se vuelve a ejecutar.
   // Ejemplo: entro al dashboard → toco "Salir" → toco "atrás": sin esto, vería otra vez el dashboard.
@@ -58,3 +64,20 @@ const activarEnlacesSalir = () => {                                 // no recibe
     });                                                             
   });                                                               
 };                                                                  
+
+// Cambia los textos fijos de la página al idioma elegido en el perfil.
+// Como se llama desde iniciarPaginaPrivada, se aplica en TODAS las páginas privadas,
+// y como el idioma está guardado en la cuenta, se conserva al volver a ingresar.
+const aplicarIdioma = (idioma) => {
+  // Le avisamos al navegador (y a los lectores de pantalla) en qué idioma está la página
+  document.documentElement.lang = idioma; //cambia el lang="es" de la etiqueta <html> por "en"
+  // Buscamos las traducciones de ese idioma. Para español no hay: el HTML ya está en español
+  const textos = TEXTOS[idioma];
+  if (!textos) return;
+  // Recorremos cada selector de la lista y le ponemos el texto traducido a lo que encuentre en la página
+  for (const selector in textos) {
+    document.querySelectorAll(selector).forEach((elemento) => {
+      elemento.textContent = textos[selector];
+    });
+  }
+};
