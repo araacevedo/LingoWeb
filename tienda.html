@@ -40,66 +40,69 @@
   <main class="contenedor-tienda">
     <section class="cabecera-tienda">
       <p class="etiqueta-seccion">RECOMPENSAS</p>
-
       <h1>Tienda y Rachas</h1>
-
       <p>
         <strong>¿Cómo comprar?</strong> Haz clic en el botón "Canjear" de la
         recompensa que desees para descontar su costo de tus puntos de
         experiencia. Actualmente tienes
-        <strong>⚡ 720 XP disponibles</strong>.
+        <strong id="xp-disponible">⚡ 0 XP disponibles</strong>.
       </p>
     </section>
 
-    <section id="compra-exitosa" class="resultado resultado-correcto">
-      <h2>✓ ¡Compra realizada con éxito!</h2>
-      <p>
-        Se han descontado los XP de tu cuenta y la recompensa ya está activa.
-      </p>
+    <!-- TP2: Selector para filtrar recompensas -->
+    <section class="filtros-tienda">
+      <div class="campo">
+        <label for="filtro-recompensas">Filtrar por categoría:</label>
+        <select id="filtro-recompensas">
+          <option value="todas">Todas las recompensas</option>
+          <option value="racha">Rachas y protección</option>
+          <option value="bonificacion">Bonificaciones</option>
+          <option value="perfil">Personalización</option>
+        </select>
+      </div>
     </section>
 
-    <section id="compra-fallida" class="resultado resultado-incorrecto">
-      <h2>✕ XP Insuficientes</h2>
-      <p>
-        Necesitas 1000 XP para esta recompensa y tienes 720 XP. ¡Completa más
-        lecciones para sumar puntos!
-      </p>
-    </section>
+    <!-- TP2: Contenedor unificado de mensajes dinámicos -->
+    <div id="mensaje-tienda" class="resultado oculto" role="alert"></div>
 
     <section class="racha">
       <h2>🔥 Tu racha</h2>
-      <p>Llevas <strong>5 días</strong> aprendiendo.</p>
+      <p>Llevas <strong id="racha-actual">0 días</strong> aprendiendo.</p>
       <p>¡Continúa para mantener tu racha!</p>
     </section>
 
-    <section class="recompensas">
+    <!-- TP2: Recompensas con data-attributes para JS -->
+    <section class="recompensas" id="lista-recompensas">
       <h2>Recompensas</h2>
 
-      <article class="recompensa">
+      <article class="recompensa" data-categoria="racha">
         <div>🔥</div>
         <h3>Protector de racha</h3>
         <p>Protege tu racha durante un día.</p>
         <strong> 100 XP </strong>
-        <a href="#compra-exitosa" class="boton boton-principal">Canjear</a>
+        <button type="button" class="boton boton-principal boton-comprar" data-costo="100">Canjear</button>
       </article>
 
-      <article class="recompensa">
+      <article class="recompensa" data-categoria="bonificacion">
         <div>⭐</div>
         <h3>Bonificación de XP</h3>
         <p>Obtén una bonificación de experiencia.</p>
         <strong> 150 XP </strong>
-        <a href="#compra-exitosa" class="boton boton-principal">Canjear</a>
+        <button type="button" class="boton boton-principal boton-comprar" data-costo="150">Canjear</button>
       </article>
 
-      <article class="recompensa">
+      <article class="recompensa" data-categoria="perfil">
         <div>🎨</div>
         <h3>Personalización de perfil</h3>
-        <p>Personaliza la apariencia de tu perfil (Requiere 1000 XP).</p>
+        <p>Personaliza la apariencia de tu perfil.</p>
         <strong> 1000 XP </strong>
-        <a href="#compra-fallida" class="boton boton-secundario">Canjear</a>
+        <button type="button" class="boton boton-secundario boton-comprar" data-costo="1000">Canjear</button>
       </article>
     </section>
   </main>
+
+  <script type="module" src="./js/presentacion/tienda.js"></script>
+
 </body>
 
 </html>
