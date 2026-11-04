@@ -68,6 +68,12 @@
   font-weight: bold;
 }
 
+.medalla-puesto {
+  display: inline-block;
+  width: 1.5rem;
+  text-align: center;
+}
+
 .contenedor-perfil {
   display: flex;
   flex-direction: column;
