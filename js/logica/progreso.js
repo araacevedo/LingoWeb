@@ -8,6 +8,8 @@
 // El progreso y sus resultados se guardan por usuario y por curso.
 import { obtenerUsuarios, guardarUsuarios } from "../datos/almacenamiento.js";
 import { obtenerUsuarioActivo } from "./autenticacion.js";
+import { actualizarRachaYXpDiaria } from "./rachaYMetaDiaria.js";
+import { obtenerInicioSemana, obtenerXpSemanal } from "./ranking.js";
 
 // Convierte las unidades del curso en una sola lista de lecciones.
 export const obtenerLecciones = (curso) =>
@@ -53,7 +55,8 @@ export const obtenerEstadoLeccion = (usuario, curso, leccion) => {
 };
 
 // Indica si la persona ya ganó experiencia.
-export const tieneActividad = (usuario) => usuario.xp > 0;
+export const tieneActividad = (usuario) =>
+  usuario.xp > 0 || contarLeccionesCompletadas(usuario) > 0; //tiene actividad si tiene XP o lecciones completadas
 
 // Cuenta cuántas lecciones terminó la persona sumando todos sus cursos (la muestra el perfil en "Mis logros").
 // Object.values da los resultados de cada curso; Object.keys(...).length cuenta las lecciones de cada uno.
@@ -84,21 +87,35 @@ export const registrarLeccionCompletada = (cursoId, leccionId, xp, errores) => {
   usuario.progreso ??= {};
   usuario.progreso[cursoId] ??= {};
 
-  // No vuelve a sumar XP si el resultado ya existe.
+  // Repasar cuenta como actividad del día, pero no vuelve a otorgar XP.
   if (usuario.progreso[cursoId][leccionId]) {
+    actualizarRachaYXpDiaria(usuario, 0);
+
+    // Guarda la fecha y la racha actualizadas antes de salir.
+    guardarUsuarios(usuarios);
+
     return { ok: true, nueva: false, usuario };
   }
 
   usuario.progreso[cursoId][leccionId] = {
     xp,
     errores,
-    fecha: new Date().toLocaleDateString("es-AR", { day: "2-digit", month: "2-digit", year: "numeric" }),
+    fecha: new Date().toLocaleDateString("es-AR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }),
   };
   usuario.xp += xp;
 
-  // También suma al puntaje semanal de la tabla de clasificación (vista 6). Si la cuenta no tenía ese dato, arranca de 0
-  usuario.xpSemanal = (usuario.xpSemanal || 0) + xp;
+  // Conserva los puntos de esta semana y suma los de la lección.
+  // Si los anteriores son de otra semana, obtenerXpSemanal devuelve 0.
+  const fechaActual = new Date();
+  usuario.xpSemanal = obtenerXpSemanal(usuario, fechaActual) + xp;
 
+  // Guarda a qué semana pertenece el puntaje actualizado.
+  usuario.semanaXp = obtenerInicioSemana(fechaActual);
+  actualizarRachaYXpDiaria(usuario, xp);
   guardarUsuarios(usuarios);
 
   return { ok: true, nueva: true, usuario };
