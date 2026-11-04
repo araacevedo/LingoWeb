@@ -11,6 +11,7 @@
 import { iniciarPaginaPrivada } from "./navegacion.js"; // revisa que haya sesión iniciada
 import { catalogoCursos } from "../datos/catalogo.js"; // la lista de cursos (Inglés, Alemán, Chino)
 import { calcularPorcentaje, tieneActividad } from "../logica/progreso.js"; // las cuentas sobre el avance
+import { obtenerRachaYXpDiaria } from "../logica/rachaYMetaDiaria.js"; // devuelve la racha y la XP ganada hoy, sin modificar la cuenta
 
 // Si no hay sesión, desde el navegacion.js manda al login y  devuelve null.
 // Si hay sesión, nos devuelve la cuenta de quien está conectado.
@@ -22,16 +23,23 @@ const mostrarSaludo = () => {
     `¡Hola, ${usuario.nombre}! Continúa aprendiendo y alcanza tus objetivos.`;
 };
 
-// Completa el cuadro de estadísticas de la derecha con los datos de la cuenta
+// Completa las estadísticas con los datos de la cuenta activa.
 const mostrarResumen = () => {
-  // Si la racha es de 1 escribimos "día"; si no, "días"
-  const palabraDias = usuario.racha === 1 ? "día" : "días";
-  // Ponemos cada dato en su lugar, buscando cada casillero por su id
-  document.getElementById("dato-racha").textContent =
-    `${usuario.racha} ${palabraDias}`;
+  // Desestructuración: extrae estas dos propiedades del objeto devuelto.
+  const { racha, xpDiaria } = obtenerRachaYXpDiaria(usuario);
+
+  const palabraDias = racha === 1 ? "día" : "días";
+
+  // Muestra la racha calculada según la fecha actual.
+  document.getElementById("dato-racha").textContent = `${racha} ${palabraDias}`;
+
+  // Saldo de experiencia disponible y liga de la cuenta.
   document.getElementById("dato-xp").textContent = `${usuario.xp} XP`;
   document.getElementById("dato-liga").textContent = `Liga ${usuario.liga}`;
-  document.getElementById("dato-meta").textContent = `${usuario.metaDiaria} XP`;
+
+  // Ejemplo: "40 / 50 XP". Puede superar la meta si sigue practicando.
+  document.getElementById("dato-meta").textContent =
+    `${xpDiaria} / ${usuario.metaDiaria} XP`;
 };
 
 // Si la cuenta es nueva, mostramos el cartel de bienvenida que está escondido en el HTML

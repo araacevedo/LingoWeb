@@ -3,10 +3,15 @@
 // =============================================================================
 
 import { iniciarPaginaPrivada } from "./navegacion.js";
-import { mostrarMensaje, marcarCampoInvalido, limpiarCamposInvalidos, leerCampo } from "./ui.js";
+import {
+  mostrarMensaje,
+  marcarCampoInvalido,
+  limpiarCamposInvalidos,
+  leerCampo,
+} from "./ui.js";
 import { actualizarDatosPerfil } from "../logica/perfil.js";
 import { contarLeccionesCompletadas } from "../logica/progreso.js";
-
+import { obtenerRachaYXpDiaria } from "../logica/rachaYMetaDiaria.js";
 
 const usuario = iniciarPaginaPrivada();
 
@@ -22,17 +27,23 @@ const calcularIniciales = (nombreCompleto) => {
 if (usuario) {
   // 1. Cargar datos en la cabecera
   document.querySelector(".cabecera-perfil h1").textContent = usuario.nombre;
-  document.querySelector(".cabecera-perfil p:nth-of-type(1)").textContent = `@${usuario.usuario}`;
-  document.querySelector(".cabecera-perfil p:nth-of-type(2)").textContent = usuario.email;
-  document.querySelector(".fecha-alta").textContent = `Miembro desde: ${usuario.fechaAlta}`;
-  document.querySelector(".avatar").textContent = calcularIniciales(usuario.nombre);
+  document.querySelector(".cabecera-perfil p:nth-of-type(1)").textContent =
+    `@${usuario.usuario}`;
+  document.querySelector(".cabecera-perfil p:nth-of-type(2)").textContent =
+    usuario.email;
+  document.querySelector(".fecha-alta").textContent =
+    `Miembro desde: ${usuario.fechaAlta}`;
+  document.querySelector(".avatar").textContent = calcularIniciales(
+    usuario.nombre,
+  );
 
   // 2. Cargar sección Mis logros
   const estadisticas = document.querySelectorAll(".logros .estadistica strong");
   if (estadisticas.length >= 3) {
-    const palabraDias = usuario.racha === 1 ? "día" : "días";
+    const { racha } = obtenerRachaYXpDiaria(usuario);
+    const palabraDias = racha === 1 ? "día" : "días";
     estadisticas[0].textContent = `${usuario.xp} XP`;
-    estadisticas[1].textContent = `${usuario.racha} ${palabraDias}`;
+    estadisticas[1].textContent = `${racha} ${palabraDias}`;
     estadisticas[2].textContent = usuario.liga;
   }
   // Cuarto logro: lecciones terminadas en todos los cursos (lo calcula la capa lógica)
@@ -58,8 +69,9 @@ if (usuario) {
       email: leerCampo("email"),
       passwordActual: document.getElementById("password-actual").value,
       passwordNueva: document.getElementById("password-nueva").value,
-      passwordConfirmacion: document.getElementById("password-confirmacion").value,
-      idiomaInterfaz: document.getElementById("idioma").value
+      passwordConfirmacion: document.getElementById("password-confirmacion")
+        .value,
+      idiomaInterfaz: document.getElementById("idioma").value,
     };
 
     const resultado = actualizarDatosPerfil(usuario.id, datos);

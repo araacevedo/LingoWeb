@@ -10,7 +10,14 @@
 // =============================================================================
 
 import { iniciarPaginaPrivada } from "./navegacion.js";
-import { LIGAS, PUESTOS_ASCENSO, obtenerRankingPorLiga, obtenerSiguienteLiga, obtenerEstadoPuesto } from "../logica/ranking.js";
+import {
+  LIGAS,
+  PUESTOS_ASCENSO,
+  obtenerRankingPorLiga,
+  obtenerSiguienteLiga,
+  obtenerEstadoPuesto,
+  obtenerXpSemanal,
+} from "../logica/ranking.js";
 
 // El portero: nos da la cuenta de quien está conectado, o null si lo mandó al login
 const usuarioActivo = iniciarPaginaPrivada();
@@ -53,7 +60,8 @@ const mostrarEncabezado = (liga) => {
   const textoAscenso = siguiente
     ? `Los ${PUESTOS_ASCENSO} primeros ascienden a la Liga ${siguiente} esta semana; el resto permanece.`
     : "Es la liga máxima: todos los participantes permanecen.";
-  document.querySelector("#info-liga").textContent = `${textoAscenso} Tu liga actual es ${usuarioActivo.liga}.`;
+  document.querySelector("#info-liga").textContent =
+    `${textoAscenso} Tu liga actual es ${usuarioActivo.liga}.`;
 };
 
 // Arma la tabla con los participantes de la liga
@@ -83,7 +91,9 @@ const mostrarTabla = (liga) => {
 
     const iniciales = calcularIniciales(estudiante.nombre);
     const esUsuarioActual = estudiante.id === usuarioActivo.id;
-    const nombreMostrar = esUsuarioActual ? `${estudiante.usuario} <span>(Tú)</span>` : estudiante.usuario;
+    const nombreMostrar = esUsuarioActual
+      ? `${estudiante.usuario} <span>(Tú)</span>`
+      : estudiante.usuario;
 
     const tr = document.createElement("tr");
     // La fila de la persona conectada lleva la clase que la resalta (ya definida en el CSS)
@@ -95,7 +105,7 @@ const mostrarTabla = (liga) => {
       <td>${textoPuesto}</td>
       <td><div class="avatar">${iniciales}</div></td>
       <td>${nombreMostrar}</td>
-      <td>${estudiante.xpSemanal || 0} XP</td>
+      <td>${obtenerXpSemanal(estudiante)} XP</td>
       <td>${textoEstado}</td>
     `;
     tbody.appendChild(tr);
