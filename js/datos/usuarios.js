@@ -15,6 +15,7 @@ export const crearUsuario = ({ nombre, usuario, email, contraseña }) => ({ // l
   contraseña,                      // contraseña: SOLO para la demo; un sistema real nunca la guarda en texto plano (la consigna pide no usar credenciales reales)
   fechaAlta: new Date().toISOString().slice(0, 10), // fecha de incorporación (pedida en la vista 5) "AAAA-MM-DD" (toISOString da fecha+hora, slice se queda con los primeros 10 caracteres); la muestra el perfil
   xp: 0,                          // experiencia acumulada: empieza en 0; la suman las lecciones (vista 4) y la muestran dashboard y perfil
+  xpSemanal: 0,                   // experiencia ganada esta semana: es el puntaje de la tabla de clasificación (vista 6)
   racha: 0,                       // días seguidos con actividad: 0 en una cuenta nueva (sirve para el "estado inicial" del dashboard)
   metaDiaria: 50,                 // meta de XP por día que muestra el resumen del dashboard y la sección de rachas
   liga: "Bronce",                 // liga inicial para la tabla de clasificación (vista 6)
@@ -33,6 +34,7 @@ export const USUARIOS_DEMO = [    // array (lista) de objetos: cada objeto es un
     contraseña: "demo123",          
     fechaAlta: "2026-03-10",      
     xp: 720,                      
+    xpSemanal: 180,               // puntaje de esta semana en la clasificación
     racha: 5,                     
     metaDiaria: 50,               
     liga: "Bronce",               
@@ -55,6 +57,7 @@ export const USUARIOS_DEMO = [    // array (lista) de objetos: cada objeto es un
     contraseña: "demo123",          
     fechaAlta: "2026-06-21",      
     xp: 1450,                     
+    xpSemanal: 310,               // puntaje de esta semana en la clasificación
     racha: 9,                     
     metaDiaria: 80,               
     liga: "Plata",                // otra liga (permite probar el selector de la vista 6)
@@ -75,8 +78,15 @@ export const USUARIOS_DEMO = [    // array (lista) de objetos: cada objeto es un
         l1: { xp: 30, errores: 2, fecha: "10/09/2026" }
       }
     }                  // progreso por curso, a definir en la vista 2/3                  // progreso por curso, a definir en la vista 2/3
-  }                               
-];                                
+  },
+
+  // --- Participantes de demostración para la tabla de clasificación (vista 6) ---
+  // Así cada liga tiene varias personas para comparar puestos, ascensos y permanencias.
+  // También se puede iniciar sesión con ellas (contraseña demo123). Empiezan sin lecciones hechas.
+  { id: "u-lucia", nombre: "Lucía Fernández", usuario: "lucia", email: "lucia@lingoweb.com", contraseña: "demo123", fechaAlta: "2026-04-02", xp: 640, xpSemanal: 240, racha: 3, metaDiaria: 50, liga: "Bronce", idiomaInterfaz: "es", progreso: {} },
+  { id: "u-martin", nombre: "Martín López", usuario: "martin", email: "martin@lingoweb.com", contraseña: "demo123", fechaAlta: "2026-05-15", xp: 310, xpSemanal: 95, racha: 1, metaDiaria: 50, liga: "Bronce", idiomaInterfaz: "es", progreso: {} },
+  { id: "u-sofia", nombre: "Sofía Gómez", usuario: "sofia", email: "sofia@lingoweb.com", contraseña: "demo123", fechaAlta: "2026-07-20", xp: 480, xpSemanal: 150, racha: 2, metaDiaria: 50, liga: "Bronce", idiomaInterfaz: "es", progreso: {} },
+];
 
 // Opiniones de demostración: así la sección de opiniones del mapa del curso no arranca vacía.
 // Cada opinión queda asociada a un curso (cursoId) y a quien la publicó (usuarioId).
