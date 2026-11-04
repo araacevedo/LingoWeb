@@ -80,12 +80,12 @@ const mostrarTabla = (liga) => {
     const puesto = index + 1;
 
     // Medallas para los tres primeros
-    let textoPuesto = puesto;
-    if (puesto === 1) textoPuesto = "🥇 1";
-    else if (puesto === 2) textoPuesto = "🥈 2";
-    else if (puesto === 3) textoPuesto = "🥉 3";
+    let iconoMedalla = "";
+    if (puesto === 1) iconoMedalla = "🥇";
+    else if (puesto === 2) iconoMedalla = "🥈";
+    else if (puesto === 3) iconoMedalla = "🥉";
 
-    // La lógica decide si asciende o permanece; acá solo le ponemos una flecha además del texto
+    // La lógica decide si asciende o permanece...
     const estado = obtenerEstadoPuesto(puesto, liga);
     const textoEstado = estado === "Ascenso" ? "⬆ Ascenso" : "= Permanencia";
 
@@ -102,7 +102,7 @@ const mostrarTabla = (liga) => {
     }
 
     tr.innerHTML = `
-      <td>${textoPuesto}</td>
+      <td><span class="medalla-puesto">${iconoMedalla}</span> ${puesto}</td>
       <td><div class="avatar">${iniciales}</div></td>
       <td>${nombreMostrar}</td>
       <td>${obtenerXpSemanal(estudiante)} XP</td>
