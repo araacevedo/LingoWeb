@@ -18,7 +18,6 @@ TP1: maquetado con HTML y CSS. TP2: interactividad y persistencia con JavaScript
 - [x] Vista 4: lección interactiva y resultados
 - [x] Vista 5: perfil, preferencias y cierre de sesión
 - [x] Vista 6: tabla de clasificación
-- [ ] Vista 7: rachas, tienda y opiniones (en desarrollo: la tienda ya canjea recompensas; las opiniones están en el mapa del curso)
 
 ## Estructura del JavaScript (TP2)
  
