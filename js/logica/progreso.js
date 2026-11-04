@@ -96,6 +96,9 @@ export const registrarLeccionCompletada = (cursoId, leccionId, xp, errores) => {
   };
   usuario.xp += xp;
 
+  // También suma al puntaje semanal de la tabla de clasificación (vista 6). Si la cuenta no tenía ese dato, arranca de 0
+  usuario.xpSemanal = (usuario.xpSemanal || 0) + xp;
+
   guardarUsuarios(usuarios);
 
   return { ok: true, nueva: true, usuario };
